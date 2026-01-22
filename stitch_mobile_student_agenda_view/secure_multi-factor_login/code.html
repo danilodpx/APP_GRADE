@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login Seguro MFA - Nova Acrópole</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#086357",
+                        "primary-hover": "#064e45",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#10221f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem", 
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white h-screen overflow-hidden selection:bg-primary/30 selection:text-primary">
+<div class="flex w-full h-full">
+<!-- Left Side: Institutional Image & Overlay -->
+<div class="hidden lg:flex w-1/2 relative bg-background-dark overflow-hidden items-center justify-center">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-105" data-alt="Close up of a classical marble Greek statue face profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEqUupLhMToSEyA2o8_W_CkDqkksR6TCAJwMHVllUG31gCZ_5YdAA4_huZPbAyv2II6FAl4oDwNK2sBuAgKq6WRzoBhKuyDUSyi_gjzTEMVywwUWIIRNlJohEqo2emsrQJ6MtaAar3ykYALv6V2o0sKltj_bmaTjKS9rnLlu8WplZiP4CmpCysg3US_4MIZ1XflKXqp-ZH3yTaPx4sXEsYPQ1heXe7m0rRiKfWQRNnNZ7s8zktr_PPqrIol2Smvei0bUWrbY3h3XpA');">
+</div>
+<!-- Primary Color Overlay with Multiply Blend Mode for Duotone Effect -->
+<div class="absolute inset-0 bg-primary/90 mix-blend-multiply"></div>
+<!-- Subtle Gradient for text readability at bottom -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<!-- Left Content -->
+<div class="relative z-10 w-full max-w-lg p-12 text-white flex flex-col justify-end h-full pb-24">
+<div class="mb-6 opacity-90">
+<span class="material-symbols-outlined text-6xl">account_balance</span>
+</div>
+<h2 class="text-4xl font-bold leading-tight mb-4 tracking-tight">Filosofia para viver.</h2>
+<div class="w-12 h-1 bg-white/30 mb-6 rounded-full"></div>
+<p class="text-lg text-white/90 font-light leading-relaxed">
+                    Bem-vindo ao sistema de gestão acadêmica da Nova Acrópole. Segurança e sabedoria em um só lugar.
+                </p>
+</div>
+</div>
+<!-- Right Side: Clean Login Form -->
+<div class="w-full lg:w-1/2 flex flex-col h-full bg-white dark:bg-background-dark overflow-y-auto scroll-smooth">
+<!-- Mobile Header Logo (Visible only on small screens) -->
+<div class="lg:hidden p-6 flex items-center gap-2 text-primary dark:text-white">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+<span class="font-bold text-xl tracking-tight">Nova Acrópole</span>
+</div>
+<div class="flex-1 flex flex-col justify-center items-center px-6 py-8 sm:px-12 lg:px-24">
+<div class="w-full max-w-[420px] space-y-8">
+<!-- Form Header -->
+<div class="text-center lg:text-left space-y-2">
+<h1 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Acesse sua conta</h1>
+<p class="text-sm text-slate-500 dark:text-slate-400">Insira suas credenciais para acessar o portal.</p>
+</div>
+<!-- Social Login Button -->
+<div>
+<button class="w-full group flex items-center justify-center gap-3 px-4 py-3 border border-slate-200 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-sm" type="button">
+<svg aria-hidden="true" class="h-5 w-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-slate-900 dark:group-hover:text-white">Entrar com Google</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="bg-white dark:bg-background-dark px-4 text-slate-500 dark:text-slate-400">Ou continue com email</span>
+</div>
+</div>
+<!-- Main Form -->
+<form action="#" class="space-y-5" method="POST">
+<!-- Email Input -->
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5" for="email">Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
+</div>
+<input autocomplete="email" class="block w-full pl-10 pr-3 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-800 dark:text-white sm:text-sm transition-all" id="email" name="email" placeholder="seu@email.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="password">Senha</label>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+</div>
+<input autocomplete="current-password" class="block w-full pl-10 pr-10 py-2.5 border border-slate-300 dark:border-slate-600 rounded-lg shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-800 dark:text-white sm:text-sm transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer text-slate-400 hover:text-slate-600">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</div>
+</div>
+</div>
+<!-- Dedicated MFA Section -->
+<div class="pt-2">
+<div class="bg-primary/5 dark:bg-primary/10 p-5 rounded-xl border border-primary/20 relative overflow-hidden">
+<!-- Decorative background icon -->
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-primary/10 text-8xl pointer-events-none select-none">security</span>
+<label class="flex items-center gap-2 text-sm font-semibold text-primary dark:text-primary-hover mb-3" for="otp">
+<span class="material-symbols-outlined text-[18px] fill-current">encrypted</span>
+                                    Código de Verificação (MFA)
+                                </label>
+<div class="relative">
+<input class="block w-full text-center tracking-[0.5em] font-mono text-lg font-bold px-3 py-2.5 border border-primary/30 rounded-lg shadow-sm placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-slate-800 dark:text-white dark:border-primary/40 transition-shadow" id="otp" inputmode="numeric" maxlength="7" name="otp" pattern="[0-9]*" placeholder="000 000" type="text"/>
+</div>
+<div class="mt-3 flex justify-between items-center text-xs">
+<span class="text-slate-500 dark:text-slate-400">Enviado para seu app autenticador</span>
+<button class="text-primary hover:text-primary-hover font-medium hover:underline" type="button">Reenviar código</button>
+</div>
+</div>
+</div>
+<!-- Remember Me & Forgot Password -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center">
+<input class="h-4 w-4 text-primary focus:ring-primary border-slate-300 rounded cursor-pointer" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600 dark:text-slate-300 cursor-pointer select-none" for="remember-me">Lembrar de mim</label>
+</div>
+<div class="text-sm">
+<a class="font-medium text-primary hover:text-primary-hover dark:text-primary dark:hover:text-white transition-colors" href="#">Esqueceu a senha?</a>
+</div>
+</div>
+<!-- Primary Button -->
+<div>
+<button class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-sm font-bold text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all transform active:scale-[0.99]" type="submit">
+                                Entrar
+                            </button>
+</div>
+</form>
+<!-- Footer Links -->
+<div class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+<div class="flex justify-center gap-6 text-xs text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Política de Privacidade</a>
+<a class="hover:text-primary transition-colors" href="#">Termos de Uso</a>
+<a class="hover:text-primary transition-colors" href="#">Suporte</a>
+</div>
+<p class="text-[10px] text-slate-300 dark:text-slate-600 mt-4 uppercase tracking-widest">Nova Acrópole © 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

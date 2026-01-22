@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grade Acadêmica - Nova Acrópole</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13eccf",
+              "background-light": "#f6f8f8",
+              "background-dark": "#10221f",
+              "surface-light": "#ffffff",
+              "surface-dark": "#162e2a",
+              "border-light": "#e5e7eb",
+              "border-dark": "#1f3b36",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for grid */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #374151;
+        }
+        
+        /* Sticky positioning helpers */
+        .sticky-col-head {
+            position: sticky;
+            left: 0;
+            z-index: 20;
+        }
+        .sticky-row-head {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .sticky-corner {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 30;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden selection:bg-primary selection:text-slate-900">
+<div class="flex h-screen w-full">
+<!-- Side Navigation -->
+<aside class="hidden md:flex flex-col w-72 h-full bg-surface-light dark:bg-surface-dark border-r border-border-light dark:border-border-dark flex-shrink-0 transition-colors duration-200">
+<div class="flex flex-col h-full p-4 justify-between">
+<div class="flex flex-col gap-6">
+<!-- Brand -->
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shadow-sm border border-border-light dark:border-border-dark" data-alt="Nova Acropole Logo Abstract" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD971qLg2NlAdVQvsCqVanS0JPJ3TCjV5ftkriuGnhNWNh1CUI_6XBZJoQKLbN3gCNZx0KyeChkq1QCs_AZXxdmsRNUCQRpWfVEtFlZRbZqqN6oY_uRvctOeEwTsXAd18Zl6Fn0WGJyVzggso18RAHhMbYp0JA4CkgddEzoCFZkAoisot_DIZTFY1I8IbZ8owxYGRVnkWnxcnFWQKcbIXdQKzFWKhsuFnyxFmSzUK6SRFEXirgXm1kPIsWDSsIeB0a9NXMglAZr3KB1");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-normal">Nova Acrópole</h1>
+<p class="text-primary text-xs font-medium leading-normal tracking-wide uppercase">Admin Panel</p>
+</div>
+</div>
+<!-- Menu -->
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">dashboard</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+<p class="text-primary-dark dark:text-primary text-sm font-bold">Acadêmico</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">groups</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Alunos</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">person_apron</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Professores</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">meeting_room</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Salas</p>
+</a>
+</div>
+</div>
+<!-- Bottom Settings -->
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary transition-colors">settings</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium">Configurações</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative">
+<!-- Top Header -->
+<header class="h-16 flex items-center justify-between px-6 border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex-shrink-0 z-40">
+<!-- Search -->
+<div class="flex items-center max-w-md w-full">
+<div class="relative w-full max-w-sm">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none rounded-lg bg-background-light dark:bg-white/5 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary sm:text-sm" placeholder="Buscar turmas, professores..." type="text"/>
+</div>
+</div>
+<!-- User & Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-white/5 text-slate-500 dark:text-slate-400 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-surface-light dark:border-surface-dark"></span>
+</button>
+<div class="h-8 w-px bg-border-light dark:bg-border-dark mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-medium text-slate-900 dark:text-white">Admin User</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Diretoria</p>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="User profile picture placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuByXHJb8G3bk7jEb52tsYlGDwPj5stXJeIA_jcyLlS193wWRUytcX5YeCyOfynfd4vpG_UT4ylVzJb8m-O5DLIHF9bSVMTcEvDh7Ke91A1hTAxEU5CiR7jOppLWHS7y_LtIRXoRglPBO9d9eJxuwZX2QANHZGfs_RLRZhrIXk_3osTAmu-jiIE7ddoQQB5m73HRwAnAZSfsRkTe6HRGgad27pZ9w7Io45l0OeIt4NWz2Lu8fFu_HnK2b9AmGAxdNsqbAy7qmop93m8W");'></div>
+</div>
+</div>
+</header>
+<!-- Scrollable Page Content -->
+<div class="flex-1 overflow-hidden flex flex-col bg-background-light dark:bg-background-dark p-6 gap-6">
+<!-- Breadcrumbs -->
+<nav class="flex text-sm font-medium text-slate-500 dark:text-slate-400">
+<ol class="list-none p-0 inline-flex">
+<li class="flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-sm mx-2">chevron_right</span>
+</li>
+<li class="flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Gestão Acadêmica</a>
+<span class="material-symbols-outlined text-sm mx-2">chevron_right</span>
+</li>
+<li class="flex items-center">
+<span class="text-slate-900 dark:text-white">Grade Curricular</span>
+</li>
+</ol>
+</nav>
+<!-- Page Heading & Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 flex-shrink-0">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Grade Acadêmica</h2>
+<p class="text-slate-500 dark:text-slate-400">Visualização semanal das aulas e ocupação de salas.</p>
+</div>
+<button class="flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-slate-900 px-5 py-3 rounded-lg font-bold transition-all shadow-lg shadow-primary/20 active:scale-95">
+<span class="material-symbols-outlined">add</span>
+<span>Nova Aula</span>
+</button>
+</div>
+<!-- Filters & Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 bg-surface-light dark:bg-surface-dark p-2 rounded-xl border border-border-light dark:border-border-dark shadow-sm flex-shrink-0">
+<!-- Left: Filters -->
+<div class="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+<!-- Date Navigation -->
+<div class="flex items-center bg-background-light dark:bg-white/5 rounded-lg border border-border-light dark:border-border-dark p-1">
+<button class="p-1.5 hover:bg-white dark:hover:bg-white/10 rounded-md text-slate-500 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_left</span>
+</button>
+<div class="flex items-center gap-2 px-3">
+<span class="material-symbols-outlined text-primary text-xl">calendar_today</span>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-200 whitespace-nowrap">23 Out - 29 Out, 2023</span>
+</div>
+<button class="p-1.5 hover:bg-white dark:hover:bg-white/10 rounded-md text-slate-500 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-xl">chevron_right</span>
+</button>
+</div>
+<!-- Room Filter -->
+<div class="relative min-w-[200px]">
+<select class="appearance-none w-full bg-background-light dark:bg-white/5 border border-border-light dark:border-border-dark text-slate-700 dark:text-slate-200 py-2.5 pl-10 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer">
+<option>Todas as Salas</option>
+<option>Sala 1 - Térreo</option>
+<option>Sala 2 - 1º Andar</option>
+<option>Sala 3 - Auditório</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-3 text-slate-500">
+<span class="material-symbols-outlined text-lg">meeting_room</span>
+</div>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</div>
+</div>
+<div class="h-6 w-px bg-border-light dark:bg-border-dark mx-1 hidden md:block"></div>
+<!-- View Toggle -->
+<div class="flex bg-background-light dark:bg-white/5 p-1 rounded-lg border border-border-light dark:border-border-dark">
+<button class="px-3 py-1.5 rounded bg-white dark:bg-white/10 text-xs font-bold shadow-sm text-slate-900 dark:text-white">Semana</button>
+<button class="px-3 py-1.5 rounded hover:bg-white/50 dark:hover:bg-white/5 text-xs font-medium text-slate-500 dark:text-slate-400 transition-colors">Dia</button>
+</div>
+</div>
+<!-- Right: Legend/Settings -->
+<div class="flex items-center gap-4 px-2">
+<div class="flex items-center gap-2">
+<span class="size-2.5 rounded-full bg-blue-400"></span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Filosofia</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2.5 rounded-full bg-purple-400"></span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Artes</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="size-2.5 rounded-full bg-orange-400"></span>
+<span class="text-xs text-slate-500 dark:text-slate-400">Psicologia</span>
+</div>
+</div>
+</div>
+<!-- Schedule Grid Container -->
+<div class="flex-1 overflow-auto rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark shadow-sm custom-scrollbar relative">
+<!-- Grid Layout: 8 columns (1 label + 7 days) vs Time Rows? 
+                         User asked for: Horizontal axis = Time, Vertical axis = Days/Rooms 
+                    -->
+<div class="min-w-[1200px] relative">
+<!-- Header Row (Times) -->
+<div class="flex border-b border-border-light dark:border-border-dark h-12 sticky-row-head bg-surface-light dark:bg-surface-dark z-20">
+<!-- Top Left Corner -->
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark sticky-corner flex items-center justify-center">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Dia / Hora</span>
+</div>
+<!-- Time Slots -->
+<div class="flex flex-1">
+<!-- Generating 15 hours from 08:00 to 22:00 -->
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">08:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">09:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">10:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">11:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">12:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">13:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">14:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">15:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">16:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">17:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">18:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">19:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">20:00</div>
+<div class="flex-1 border-r border-border-light dark:border-border-dark/50 flex items-center justify-center text-xs font-medium text-slate-500">21:00</div>
+<div class="flex-1 flex items-center justify-center text-xs font-medium text-slate-500">22:00</div>
+</div>
+</div>
+<!-- Current Time Indicator (Vertical Line) -->
+<div class="absolute top-12 bottom-0 left-[68%] w-0.5 bg-primary z-10 pointer-events-none">
+<div class="absolute -top-1.5 -left-1.5 size-3.5 bg-primary rounded-full border-2 border-white dark:border-surface-dark"></div>
+</div>
+<!-- Rows (Days) -->
+<div class="flex flex-col">
+<!-- Row: Segunda -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<!-- Sticky Label -->
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Segunda</span>
+<span class="text-xs text-slate-400">23 Out</span>
+</div>
+<!-- Grid Area -->
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- Class Block: 08:00 - 10:00 (Width: ~13.33%) -->
+<div class="absolute top-2 bottom-2 left-[0%] w-[13.33%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-blue-100 dark:bg-blue-900/40 border-l-4 border-blue-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-blue-100 truncate">Intro à Filosofia</p>
+<p class="text-[10px] text-slate-600 dark:text-blue-200 mt-1">08:00 - 10:00</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-blue-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Silva
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-blue-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Sala 1
+                                            </div>
+</div>
+</div>
+<!-- Class Block: 19:30 - 21:30 (Start at 11.5 hours in / 15 total) -> ~76% left -->
+<div class="absolute top-2 bottom-2 left-[76.6%] w-[13.33%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-purple-100 dark:bg-purple-900/40 border-l-4 border-purple-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-purple-100 truncate">Psicologia Geral</p>
+<p class="text-[10px] text-slate-600 dark:text-purple-200 mt-1">19:30 - 21:30</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-purple-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Ana
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-purple-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Sala 2
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row: Terça -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Terça</span>
+<span class="text-xs text-slate-400">24 Out</span>
+</div>
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- 14:00 - 16:00 -->
+<div class="absolute top-2 bottom-2 left-[40%] w-[13.33%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-orange-100 dark:bg-orange-900/40 border-l-4 border-orange-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-orange-100 truncate">Simbolismo</p>
+<p class="text-[10px] text-slate-600 dark:text-orange-200 mt-1">14:00 - 16:00</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-orange-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Beto
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-orange-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Sala 3
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row: Quarta -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Quarta</span>
+<span class="text-xs text-slate-400">25 Out</span>
+</div>
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- 10:00 - 12:00 -->
+<div class="absolute top-2 bottom-2 left-[13.33%] w-[13.33%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-emerald-100 dark:bg-emerald-900/40 border-l-4 border-emerald-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-emerald-100 truncate">História da Arte</p>
+<p class="text-[10px] text-slate-600 dark:text-emerald-200 mt-1">10:00 - 12:00</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-emerald-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Carla
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-emerald-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Sala 1
+                                            </div>
+</div>
+</div>
+<!-- 19:00 - 20:30 -->
+<div class="absolute top-2 bottom-2 left-[73.33%] w-[10%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-blue-100 dark:bg-blue-900/40 border-l-4 border-blue-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-blue-100 truncate">Sociopolítica</p>
+<p class="text-[10px] text-slate-600 dark:text-blue-200 mt-1">19:00 - 20:30</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-blue-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Silva
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row: Quinta -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Quinta</span>
+<span class="text-xs text-slate-400">26 Out</span>
+</div>
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- Empty State Pattern -->
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIi8+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlPSIjZjNmNGY2IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+')] opacity-50 dark:opacity-5 pointer-events-none"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-surface-light dark:bg-surface-dark border border-dashed border-slate-300 dark:border-slate-600 rounded-lg px-4 py-2 text-xs font-medium text-slate-500 hover:text-primary hover:border-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> Agendar
+                                        </button>
+</div>
+</div>
+</div>
+<!-- Row: Sexta -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Sexta</span>
+<span class="text-xs text-slate-400">27 Out</span>
+</div>
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- 18:00 - 20:00 -->
+<div class="absolute top-2 bottom-2 left-[66.66%] w-[13.33%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-rose-100 dark:bg-rose-900/40 border-l-4 border-rose-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-rose-100 truncate">Oratória</p>
+<p class="text-[10px] text-slate-600 dark:text-rose-200 mt-1">18:00 - 20:00</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-rose-300">
+<span class="material-symbols-outlined text-[10px]">person</span> Prof. Dinis
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-rose-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Sala 2
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Row: Sábado -->
+<div class="flex h-28 border-b border-border-light dark:border-border-dark/50 group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors relative">
+<div class="w-32 flex-shrink-0 border-r border-border-light dark:border-border-dark sticky-col-head bg-surface-light dark:bg-surface-dark group-hover:bg-slate-50 dark:group-hover:bg-[#1a3530] flex flex-col items-center justify-center p-2 transition-colors z-20">
+<span class="text-sm font-bold text-slate-900 dark:text-white">Sábado</span>
+<span class="text-xs text-slate-400">28 Out</span>
+</div>
+<div class="flex flex-1 relative bg-[linear-gradient(90deg,transparent_99%,rgba(0,0,0,0.03)_100%)] dark:bg-[linear-gradient(90deg,transparent_99%,rgba(255,255,255,0.03)_100%)]" style="background-size: 6.66% 100%;">
+<!-- 09:00 - 13:00 -->
+<div class="absolute top-2 bottom-2 left-[6.66%] w-[26.66%] px-1 py-0.5">
+<div class="h-full w-full rounded-md bg-yellow-100 dark:bg-yellow-900/40 border-l-4 border-yellow-500 p-2 cursor-pointer hover:shadow-md transition-shadow">
+<p class="text-xs font-bold text-slate-800 dark:text-yellow-100 truncate">Workshop de Ética</p>
+<p class="text-[10px] text-slate-600 dark:text-yellow-200 mt-1">09:00 - 13:00</p>
+<div class="flex items-center gap-1 mt-1 text-[10px] text-slate-500 dark:text-yellow-300">
+<span class="material-symbols-outlined text-[10px]">group</span> Turma A + B
+                                            </div>
+<div class="flex items-center gap-1 mt-0.5 text-[10px] text-slate-500 dark:text-yellow-300">
+<span class="material-symbols-outlined text-[10px]">meeting_room</span> Auditório
+                                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

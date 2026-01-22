@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo da Aplicação</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MinhaApp</div>
+        <ul class="nav-links">
+            <li><button onclick="showScreen('home')" class="nav-btn active"><i class="fas fa-home"></i> Início</button></li>
+            <li><button onclick="showScreen('products')" class="nav-btn"><i class="fas fa-box-open"></i> Produtos</button></li>
+            <li><button onclick="showScreen('contact')" class="nav-btn"><i class="fas fa-envelope"></i> Contato</button></li>
+        </ul>
+    </nav>
+
+    <div id="app-container">
+        <!-- Home Screen -->
+        <div id="home" class="screen">
+            <h1>Bem-vindo à Página Inicial</h1>
+            <p>Esta é a tela principal da aplicação.</p>
+        </div>
+
+        <!-- Products Screen -->
+        <div id="products" class="screen hidden">
+            <h1>Produtos</h1>
+            <p>Confira nossos produtos aqui.</p>
+            <div class="product-list">
+                <div class="product-item"><i class="fas fa-mobile-alt"></i> Smartphone</div>
+                <div class="product-item"><i class="fas fa-laptop"></i> Laptop</div>
+                <div class="product-item"><i class="fas fa-headphones"></i> Fones de Ouvido</div>
+            </div>
+        </div>
+
+        <!-- Contact Screen -->
+        <div id="contact" class="screen hidden">
+            <h1>Contato</h1>
+            <p>Entre em contato conosco.</p>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" placeholder="Seu nome">
+
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" placeholder="Sua mensagem"></textarea>
+
+                <button type="button">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

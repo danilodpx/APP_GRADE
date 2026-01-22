@@ -3,54 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo da Aplicação</title>
+    <title>Admin Intelligent Schedule Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">MinhaApp</div>
-        <ul class="nav-links">
-            <li><button onclick="showScreen('home')" class="nav-btn active"><i class="fas fa-home"></i> Início</button></li>
-            <li><button onclick="showScreen('products')" class="nav-btn"><i class="fas fa-box-open"></i> Produtos</button></li>
-            <li><button onclick="showScreen('contact')" class="nav-btn"><i class="fas fa-envelope"></i> Contato</button></li>
-        </ul>
-    </nav>
-
-    <div id="app-container">
-        <!-- Home Screen -->
-        <div id="home" class="screen">
-            <h1>Bem-vindo à Página Inicial</h1>
-            <p>Esta é a tela principal da aplicação.</p>
-        </div>
-
-        <!-- Products Screen -->
-        <div id="products" class="screen hidden">
-            <h1>Produtos</h1>
-            <p>Confira nossos produtos aqui.</p>
-            <div class="product-list">
-                <div class="product-item"><i class="fas fa-mobile-alt"></i> Smartphone</div>
-                <div class="product-item"><i class="fas fa-laptop"></i> Laptop</div>
-                <div class="product-item"><i class="fas fa-headphones"></i> Fones de Ouvido</div>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>IntelliSched</span>
+                </div>
             </div>
-        </div>
 
-        <!-- Contact Screen -->
-        <div id="contact" class="screen hidden">
-            <h1>Contato</h1>
-            <p>Entre em contato conosco.</p>
-            <form>
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" placeholder="Seu nome">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <button onclick="showScreen('home')" class="nav-btn active">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showScreen('schedule')" class="nav-btn">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Agenda</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showScreen('products')" class="nav-btn">
+                            <i class="fas fa-box"></i>
+                            <span>Produtos</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showScreen('contact')" class="nav-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Mensagens</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showScreen('settings')" class="nav-btn">
+                            <i class="fas fa-cog"></i>
+                            <span>Configurações</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
 
-                <label for="message">Mensagem:</label>
-                <textarea id="message" name="message" placeholder="Sua mensagem"></textarea>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <div class="user-details">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
 
-                <button type="button">Enviar</button>
-            </form>
-        </div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h2>Visão Geral</h2>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar...">
+                    </div>
+                    <button class="icon-btn"><i class="fas fa-bell"></i></button>
+                    <button class="icon-btn"><i class="fas fa-question-circle"></i></button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div id="app-content">
+
+                <!-- Home / Dashboard Screen -->
+                <div id="home" class="screen">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue"><i class="fas fa-users"></i></div>
+                            <div class="stat-info">
+                                <h3>Total Usuários</h3>
+                                <p>1,234</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-green"><i class="fas fa-calendar-check"></i></div>
+                            <div class="stat-info">
+                                <h3>Agendamentos</h3>
+                                <p>56</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-purple"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-info">
+                                <h3>Receita</h3>
+                                <p>R$ 12.450</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-orange"><i class="fas fa-tasks"></i></div>
+                            <div class="stat-info">
+                                <h3>Tarefas</h3>
+                                <p>12 Pendentes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-row">
+                        <div class="card large-card">
+                            <div class="card-header">
+                                <h3>Próximos Agendamentos</h3>
+                                <button class="btn-sm">Ver Todos</button>
+                            </div>
+                            <div class="card-body">
+                                <ul class="schedule-list">
+                                    <li class="schedule-item">
+                                        <div class="time">09:00</div>
+                                        <div class="details">
+                                            <h4>Reunião de Equipe</h4>
+                                            <p>Sala de Conferência A</p>
+                                        </div>
+                                        <span class="status pending">Pendente</span>
+                                    </li>
+                                    <li class="schedule-item">
+                                        <div class="time">10:30</div>
+                                        <div class="details">
+                                            <h4>Cliente: João Silva</h4>
+                                            <p>Consultoria Online</p>
+                                        </div>
+                                        <span class="status confirmed">Confirmado</span>
+                                    </li>
+                                    <li class="schedule-item">
+                                        <div class="time">14:00</div>
+                                        <div class="details">
+                                            <h4>Revisão de Projeto</h4>
+                                            <p>Escritório</p>
+                                        </div>
+                                        <span class="status confirmed">Confirmado</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card small-card">
+                            <div class="card-header">
+                                <h3>Atividade Recente</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="activity-list">
+                                    <li><i class="fas fa-circle text-green"></i> Novo pedido #1234</li>
+                                    <li><i class="fas fa-circle text-blue"></i> Usuário cadastrado</li>
+                                    <li><i class="fas fa-circle text-red"></i> Erro no servidor</li>
+                                    <li><i class="fas fa-circle text-orange"></i> Agendamento cancelado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Schedule Screen (New) -->
+                <div id="schedule" class="screen hidden">
+                    <div class="card full-card">
+                        <div class="card-header">
+                            <h3>Agenda Completa</h3>
+                            <div class="card-actions">
+                                <button class="btn-primary"><i class="fas fa-plus"></i> Novo Evento</button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="calendar-placeholder">
+                                <p style="text-align: center; color: #888; padding: 50px;">
+                                    <i class="fas fa-calendar-alt" style="font-size: 3rem; display: block; margin-bottom: 10px;"></i>
+                                    Componente de Calendário aqui
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products Screen -->
+                <div id="products" class="screen hidden">
+                    <div class="card full-card">
+                        <div class="card-header">
+                            <h3>Gestão de Produtos</h3>
+                            <button class="btn-primary"><i class="fas fa-plus"></i> Adicionar Produto</button>
+                        </div>
+                        <div class="card-body">
+                             <div class="product-grid">
+                                <div class="product-card">
+                                    <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <h4>Smartphone X</h4>
+                                    <p>R$ 2.500,00</p>
+                                    <span class="stock in-stock">Em Estoque</span>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-icon"><i class="fas fa-laptop"></i></div>
+                                    <h4>Laptop Pro</h4>
+                                    <p>R$ 5.500,00</p>
+                                    <span class="stock low-stock">Baixo Estoque</span>
+                                </div>
+                                <div class="product-card">
+                                    <div class="product-icon"><i class="fas fa-headphones"></i></div>
+                                    <h4>Fone Wireless</h4>
+                                    <p>R$ 350,00</p>
+                                    <span class="stock in-stock">Em Estoque</span>
+                                </div>
+                                 <div class="product-card">
+                                    <div class="product-icon"><i class="fas fa-camera"></i></div>
+                                    <h4>Câmera DSLR</h4>
+                                    <p>R$ 3.200,00</p>
+                                    <span class="stock out-stock">Esgotado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Screen -->
+                <div id="contact" class="screen hidden">
+                     <div class="card full-card">
+                        <div class="card-header">
+                            <h3>Mensagens</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Nome:</label>
+                                    <input type="text" id="name" name="name" placeholder="Nome do contato">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" placeholder="email@exemplo.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Mensagem:</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem..."></textarea>
+                                </div>
+
+                                <button type="button" class="btn-primary">Enviar Mensagem</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Settings Screen (Placeholder) -->
+                <div id="settings" class="screen hidden">
+                    <div class="card full-card">
+                        <div class="card-header">
+                            <h3>Configurações</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Painel de configurações do sistema.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>

@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial setup if needed
+    // Initial setup
+    showScreen('home');
 });
+
+const screenTitles = {
+    'home': 'Visão Geral',
+    'schedule': 'Agenda Inteligente',
+    'products': 'Gestão de Produtos',
+    'contact': 'Central de Mensagens',
+    'settings': 'Configurações do Sistema'
+};
 
 function showScreen(screenId) {
     // Hide all screens
@@ -25,4 +34,10 @@ function showScreen(screenId) {
             btn.classList.remove('active');
         }
     });
+
+    // Update Header Title
+    const titleElement = document.querySelector('.header-left h2');
+    if (titleElement && screenTitles[screenId]) {
+        titleElement.textContent = screenTitles[screenId];
+    }
 }

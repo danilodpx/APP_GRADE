@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="pt-BR">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nova Acrópole - Mensageria</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -16,10 +15,10 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#009485",
+                        "primary": "#086357",
                         "primary-light": "#e6f4f3",
-                        "background-light": "#f5f8f8",
-                        "background-dark": "#0f2321",
+                        "background-light": "#f8fcfb",
+                        "background-dark": "#10221f",
                         "dark-text": "#0c1d1b",
                         "muted-text": "#45a197",
                     },
@@ -53,60 +52,66 @@
     </style>
 </head>
 <body class="font-display bg-background-light dark:bg-background-dark text-dark-text dark:text-gray-100 h-screen overflow-hidden flex selection:bg-primary/20">
-<!-- Global Navigation Sidebar -->
-<aside class="hidden md:flex flex-col w-64 bg-white dark:bg-[#132a28] border-r border-gray-200 dark:border-gray-800 h-full flex-shrink-0 z-20">
-<div class="p-6 pb-2">
-<div class="flex items-center gap-3 mb-8">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0 border border-gray-100" data-alt="Organization Logo, abstract geometric shape in teal" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7Qh2mM7oNtirBeUFNC9ASla-x5YAu6YkVAPCrj4Emb188W_wcN6uoNpASZw_knqb3hR26iZ8EDpE6iGczSXMNq9sOgom2bBgXfyoEQfbOzbEuY425TINcOT8o_JagUB9vpJvZxrcjJ3ElwrfaAor07o-r5eCuc6e1DlyOtWBdAjJsaQKyfyEfwp-FtMcLs4jEsA7JB7AzVowSA59My_R_kd_8H7gx9cRz2eoujxGzBKCuVRD5uA6RkK0HH_IQdhL2BtZzORGAqh7z");'></div>
-<div class="flex flex-col overflow-hidden">
-<h1 class="text-dark-text dark:text-white text-base font-bold leading-normal truncate">Nova Acrópole</h1>
-<p class="text-muted-text text-xs font-normal leading-normal truncate">Management System</p>
+
+<!-- Global Navigation Sidebar (Standardized) -->
+<aside class="w-64 bg-primary flex flex-col h-full shrink-0 transition-all duration-300 ease-in-out relative z-30 shadow-xl hidden md:flex">
+<div class="p-6 pb-2 flex items-center gap-3">
+<!-- Logo -->
+<div class="shrink-0">
+<img src="../../NA/NA_logo_branco.png" alt="Nova Acrópole" class="h-10 w-auto">
+</div>
+<div>
+<h1 class="text-white font-bold text-lg leading-tight tracking-tight">Nova Acrópole</h1>
+<p class="text-white/60 text-xs font-medium">Sistema Admin</p>
 </div>
 </div>
-</div>
-<nav class="flex-1 flex flex-col gap-1 px-3 overflow-y-auto custom-scrollbar">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-dark-text dark:text-gray-300 hover:bg-primary-light dark:hover:bg-primary/20 transition-colors group" href="#">
-<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400">dashboard</span>
+<div class="px-4 py-6 flex flex-col gap-1 flex-1 overflow-y-auto">
+<p class="px-4 text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">Menu Principal</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../admin_intelligent_schedule_dashboard/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">dashboard</span>
 <span class="text-sm font-medium">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-dark-text dark:text-gray-300 hover:bg-primary-light dark:hover:bg-primary/20 transition-colors group" href="#">
-<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400">book</span>
-<span class="text-sm font-medium">Classes</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../grade_acadêmica_screen/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-sm font-medium">Grade</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-dark-text dark:text-gray-300 hover:bg-primary-light dark:hover:bg-primary/20 transition-colors group" href="#">
-<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400">group</span>
-<span class="text-sm font-medium">Students</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../professores_directory/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">school</span>
+<span class="text-sm font-medium">Professores</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../alunos_management/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">face</span>
+<span class="text-sm font-medium">Alunos</span>
 </a>
 <!-- Active State -->
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary-light dark:bg-primary/20 text-primary dark:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/20 text-white shadow-sm ring-1 ring-white/10 transition-colors" href="../mensageria_internal_chat/index.html">
+<span class="material-symbols-outlined text-[20px] fill-current">chat_bubble</span>
 <span class="text-sm font-bold">Mensageria</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-dark-text dark:text-gray-300 hover:bg-primary-light dark:hover:bg-primary/20 transition-colors group" href="#">
-<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400">calendar_month</span>
-<span class="text-sm font-medium">Schedule</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../mobile_student_agenda_view/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">smartphone</span>
+<span class="text-sm font-medium">Agenda (Aluno)</span>
 </a>
-</nav>
-<div class="p-3 mt-auto">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-dark-text dark:text-gray-300 hover:bg-primary-light dark:hover:bg-primary/20 transition-colors group" href="#">
-<span class="material-symbols-outlined text-gray-500 group-hover:text-primary dark:text-gray-400">settings</span>
-<span class="text-sm font-medium">Settings</span>
-</a>
-<div class="flex items-center gap-3 px-3 py-4 mt-2 border-t border-gray-100 dark:border-gray-800">
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-9 shrink-0" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATCjsO8DsM9v-1kmhWj13JncTFzIs89evj5uS8wDYbZhKHL2Ye74AYJiSYIzfl706L_MM7C2HCTh_xM0-IIzYE5RGict9TFamSpiUNo9HM2lWPfhciW_FnCSxwrpcKpRDxNJR4VJvyydN758b3TpL6BucCsbINfWRnz6PBATtPItsI9nzh8CK3EXGdujaj9UusNd7gvZtI-3gh9Bcg_gNH59s2feqARTIkgnK-EaPmbOOHintV6SDpNQp__Kus5mKDrUwZ_NwXr2Zz");'></div>
-<div class="flex flex-col">
-<p class="text-sm font-medium text-dark-text dark:text-white">Admin User</p>
-<p class="text-xs text-muted-text">View Profile</p>
 </div>
+<!-- User Profile Snippet at Bottom -->
+<div class="p-4 border-t border-white/10 mt-auto bg-primary">
+<button class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-white/5 transition-colors text-left group">
+<div class="size-9 rounded-full bg-cover bg-center border border-white/20 shadow-md" data-alt="User avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN6C2BcndNrmt-C-Qbbmd4UABCt4Qxl-Hya0fW0l0ybxgEVmqoJuwR9uCl9lTHL3qrvtYTTH0pf_DZXWhkkDEgKdV7Hag6RoBYD1Zushilq2HZTn6B7laNl5OULC8-n_yCpwz0X5bNqitYCVD7L4H0-bLCn-NGvdIrck2RbIOYblT0IAaCzXA7Hnez8Wr6X1T32b1JWuGoxZq-AyKD0UF61Trt9HJ2S947Yqj-qXR6oiXfb7YKRQuL1GEV5SXmG9sJxD0wBdmtibmA');"></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-medium text-white truncate group-hover:text-white/90">Admin User</span>
+<span class="text-xs text-white/60 truncate group-hover:text-white/80">admin@acropole.org</span>
 </div>
+<span class="material-symbols-outlined text-white/60 ml-auto text-lg group-hover:text-white">expand_more</span>
+</button>
 </div>
 </aside>
+
 <!-- Message List Sidebar -->
 <section class="flex flex-col w-full md:w-80 lg:w-96 bg-[#f8fcfc] dark:bg-[#162e2c] border-r border-gray-200 dark:border-gray-800 h-full flex-shrink-0 z-10">
 <!-- Header -->
 <div class="px-5 pt-6 pb-2 flex justify-between items-center">
-<h2 class="text-2xl font-bold tracking-tight text-dark-text dark:text-white">Messages</h2>
-<button aria-label="New Message" class="bg-primary hover:bg-[#007a6e] text-white rounded-lg p-2 transition shadow-sm">
+<h2 class="text-2xl font-bold tracking-tight text-dark-text dark:text-white">Mensagens</h2>
+<button aria-label="Nova Mensagem" class="bg-primary hover:bg-[#007a6e] text-white rounded-lg p-2 transition shadow-sm">
 <span class="material-symbols-outlined block text-xl">edit_square</span>
 </button>
 </div>
@@ -116,15 +121,15 @@
 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-muted-text group-focus-within:text-primary">search</span>
 </div>
-<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-lg leading-5 bg-white dark:bg-[#0f2321] text-dark-text dark:text-gray-100 placeholder-muted-text focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm sm:text-sm" placeholder="Search conversations..." type="text"/>
+<input class="block w-full pl-10 pr-3 py-2.5 border-none rounded-lg leading-5 bg-white dark:bg-[#0f2321] text-dark-text dark:text-gray-100 placeholder-muted-text focus:outline-none focus:ring-2 focus:ring-primary/50 shadow-sm sm:text-sm" placeholder="Buscar conversas..." type="text"/>
 </div>
 </div>
 <!-- Filter Chips -->
 <div class="px-5 pb-2 flex gap-2 overflow-x-auto scrollbar-hide">
-<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-primary text-white text-xs font-medium shadow-sm">All</button>
-<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Unread</button>
-<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Teachers</button>
-<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Staff</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-primary text-white text-xs font-medium shadow-sm">Todas</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Não lidas</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Professores</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-white dark:bg-[#0f2321] border border-gray-200 dark:border-gray-700 text-dark-text dark:text-gray-300 text-xs font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition">Equipe</button>
 </div>
 <!-- Conversation List -->
 <div class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-1">
@@ -137,9 +142,9 @@
 <div class="flex flex-col flex-1 min-w-0 justify-center">
 <div class="flex justify-between items-center mb-0.5">
 <h3 class="text-sm font-semibold text-dark-text dark:text-white truncate">Prof. Helena Blavatsky</h3>
-<span class="text-[10px] text-muted-text font-medium">10:30 AM</span>
+<span class="text-[10px] text-muted-text font-medium">10:30</span>
 </div>
-<p class="text-xs text-muted-text truncate dark:text-gray-400">Did you receive the syllabus for Monday?</p>
+<p class="text-xs text-muted-text truncate dark:text-gray-400">Você recebeu a ementa para segunda-feira?</p>
 </div>
 <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-lg"></div>
 </div>
@@ -152,9 +157,9 @@
 <div class="flex flex-col flex-1 min-w-0 justify-center">
 <div class="flex justify-between items-center mb-0.5">
 <h3 class="text-sm font-semibold text-dark-text dark:text-white truncate">Secretaria</h3>
-<span class="text-[10px] text-gray-400 font-medium">Yesterday</span>
+<span class="text-[10px] text-gray-400 font-medium">Ontem</span>
 </div>
-<p class="text-xs text-dark-text dark:text-gray-300 truncate">Confirming room allocation for the event.</p>
+<p class="text-xs text-dark-text dark:text-gray-300 truncate">Confirmando alocação de sala para o evento.</p>
 </div>
 </div>
 <!-- Read Conversation -->
@@ -167,9 +172,9 @@
 <div class="flex flex-col flex-1 min-w-0 justify-center">
 <div class="flex justify-between items-center mb-0.5">
 <h3 class="text-sm font-semibold text-dark-text dark:text-white truncate">Jorge Smith</h3>
-<span class="text-[10px] text-gray-400 font-medium">Tuesday</span>
+<span class="text-[10px] text-gray-400 font-medium">Terça</span>
 </div>
-<p class="text-xs text-gray-500 dark:text-gray-400 truncate">I will be late for the meeting.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">Vou me atrasar para a reunião.</p>
 </div>
 </div>
 <!-- Read Conversation -->
@@ -180,9 +185,9 @@
 <div class="flex flex-col flex-1 min-w-0 justify-center">
 <div class="flex justify-between items-center mb-0.5">
 <h3 class="text-sm font-semibold text-dark-text dark:text-white truncate">Ana Clara</h3>
-<span class="text-[10px] text-gray-400 font-medium">Oct 20</span>
+<span class="text-[10px] text-gray-400 font-medium">20 Out</span>
 </div>
-<p class="text-xs text-gray-500 dark:text-gray-400 truncate">Thanks for the book recommendation!</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">Obrigada pela recomendação do livro!</p>
 </div>
 </div>
 </div>
@@ -198,7 +203,7 @@
 </div>
 <div>
 <h3 class="text-base font-bold text-dark-text dark:text-white">Prof. Helena Blavatsky</h3>
-<p class="text-xs text-primary font-medium">Philosophy Teacher • Online</p>
+<p class="text-xs text-primary font-medium">Professora de Filosofia • Online</p>
 </div>
 </div>
 <div class="flex items-center gap-2">
@@ -217,25 +222,25 @@
 <div class="flex-1 overflow-y-auto p-6 bg-background-light dark:bg-[#132a28] flex flex-col gap-6 custom-scrollbar">
 <!-- Date Divider -->
 <div class="flex justify-center py-2">
-<span class="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Tuesday, October 24th</span>
+<span class="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Terça, 24 de Outubro</span>
 </div>
 <!-- Received Message Group -->
 <div class="flex gap-3 max-w-3xl">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mt-auto mb-1" data-alt="Tiny avatar of Helena" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB30Nc8b-c7yeY-GiXRv-_kkqlYyy2Lo1z-FWFdEmOFG3kcpOFtBWqHCKEhUq9gZpZcfI4xXjsThTqZfWV-CzFj3CGz8Mo2b-qltWozKvlgHedQhMTiwDkn3tzrlVjt4CER5lM6CkJAmRD_RymKhWbLTW4SFvoAj8g5BRTd3Q-Lnx4FghviqCu8VhTgeq3YKi1km5EBfNtTYRI0UpXDzG_qKpLvg0Zh96dHUq3FUEimsAHxVtMM51HrjnxFnTsMSZyVSs80cGlqh2OF");'></div>
 <div class="flex flex-col gap-1 items-start">
 <div class="bg-white dark:bg-[#1a3835] p-4 rounded-2xl rounded-bl-none shadow-sm text-sm text-dark-text dark:text-gray-200 leading-relaxed border border-gray-100 dark:border-gray-700">
-<p>Hello, could you please review the student attendance for the Introduction to Philosophy class?</p>
+<p>Olá, você poderia revisar a lista de presença para a aula de Introdução à Filosofia?</p>
 </div>
-<span class="text-[10px] text-gray-400 ml-1">10:15 AM</span>
+<span class="text-[10px] text-gray-400 ml-1">10:15</span>
 </div>
 </div>
 <!-- Sent Message Group -->
 <div class="flex flex-col gap-1 items-end self-end max-w-3xl">
 <div class="bg-primary p-4 rounded-2xl rounded-br-none shadow-md text-sm text-white leading-relaxed">
-<p>Sure, I am pulling the report right now. Will send it shortly.</p>
+<p>Claro, estou puxando o relatório agora mesmo. Envio em breve.</p>
 </div>
 <div class="flex items-center gap-1 mr-1">
-<span class="text-[10px] text-gray-400">10:18 AM</span>
+<span class="text-[10px] text-gray-400">10:18</span>
 <span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">done_all</span>
 </div>
 </div>
@@ -244,9 +249,9 @@
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-8 shrink-0 mt-auto mb-1" data-alt="Tiny avatar of Helena" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGwkBNJtPzPKKmkAZzO-GHCig1Nn_DzotqRHvt8nckw5EWm-zOwBl-K1e0o-b3ZyWl29s_V49G1ISSQn7Mv-eJg1BIBMG9M-JDeH_YtmI-V9hu4a8fmlGseRauXR6Zmw9qAO3sNMSEPH8nz8Nysm7WOoRWJKE-WGzkdvLaDl0ZswElbQwirRT_5hYx6KR9d-Uxojf7b37X5Jd9co2J5IcPRtLEzN6CZ55TkWF2KeI2RRxQKDOI8k5cMXQxK9RSukN6csQptBDG8YvJ");'></div>
 <div class="flex flex-col gap-1 items-start">
 <div class="bg-white dark:bg-[#1a3835] p-4 rounded-2xl rounded-bl-none shadow-sm text-sm text-dark-text dark:text-gray-200 leading-relaxed border border-gray-100 dark:border-gray-700">
-<p>Perfect, thanks! Also, did you receive the syllabus for Monday?</p>
+<p>Perfeito, obrigada! Além disso, você recebeu a ementa para segunda-feira?</p>
 </div>
-<span class="text-[10px] text-gray-400 ml-1">10:30 AM</span>
+<span class="text-[10px] text-gray-400 ml-1">10:30</span>
 </div>
 </div>
 <!-- Typing Indicator (Optional Polish) -->
@@ -268,7 +273,7 @@
 <button class="p-2 text-gray-400 hover:text-primary transition self-center hidden sm:block">
 <span class="material-symbols-outlined">image</span>
 </button>
-<textarea class="w-full bg-transparent border-none focus:ring-0 p-2.5 text-sm text-dark-text dark:text-white placeholder-gray-400 resize-none max-h-32" placeholder="Type a message..." rows="1"></textarea>
+<textarea class="w-full bg-transparent border-none focus:ring-0 p-2.5 text-sm text-dark-text dark:text-white placeholder-gray-400 resize-none max-h-32" placeholder="Digite uma mensagem..." rows="1"></textarea>
 <button class="p-2 text-gray-400 hover:text-primary transition self-center">
 <span class="material-symbols-outlined">sentiment_satisfied</span>
 </button>
@@ -277,13 +282,14 @@
 </button>
 </div>
 <div class="flex justify-between items-center mt-2 px-1">
-<p class="text-[10px] text-gray-400">Press Enter to send, Shift + Enter for new line</p>
+<p class="text-[10px] text-gray-400">Pressione Enter para enviar, Shift + Enter para nova linha</p>
 <div class="flex gap-2">
 <!-- Quick Replies -->
-<button class="text-[10px] px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 transition">OK, thanks</button>
-<button class="text-[10px] px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 transition">On it</button>
+<button class="text-[10px] px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 transition">OK, obrigado(a)</button>
+<button class="text-[10px] px-2 py-1 rounded bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 transition">Estou vendo isso</button>
 </div>
 </div>
 </div>
 </main>
-</body></html>
+</body>
+</html>

@@ -13,12 +13,10 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#086314",
-                        "primary-dark": "#05420d",
-                        "accent-button": "#086357",
-                        "accent-button-hover": "#064e45",
-                        "background-light": "#f8fcf9",
-                        "background-dark": "#102213",
+                        "primary": "#086357",
+                        "primary-dark": "#064e45",
+                        "background-light": "#f8fcfb",
+                        "background-dark": "#10221f",
                         "surface-light": "#ffffff",
                         "surface-dark": "#1a331e",
                         "border-light": "#e2e8f0",
@@ -70,44 +68,54 @@
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
 <div class="flex h-screen w-full overflow-hidden">
 <!-- Sidebar -->
-<aside class="w-64 flex-shrink-0 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hidden md:flex flex-col z-20">
-<div class="p-6 pb-2">
-<div class="flex items-center gap-3 mb-8">
-<div class="bg-center bg-no-repeat bg-cover rounded-lg size-10 shadow-sm border border-border-light dark:border-border-dark" data-alt="Nova Acropole Logo with greek column symbol" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWG0g09HqDfioym3IujkQ2_-fkP5MomMYtO-9EpSz4ZUCqV1_wZ-3pe_21dDbNkFZjMynAda4VtFzIqs4p5ccDCMLjx63tKe7K7U01Gyg4UeDXi4kzdlwaXd1rIRQ4TkRX4p0jHosTgHt4NTaBSZYIhrBP7rFb6ClQypRao_UUkwmROJsiMTZzmhcQ9RsauwLLFzVGyqlmhlEIt6jVVJW_6tO9Hak5yy7otHZk_S7wKRrfzy3osBtaUMfQdNTmfEYfi0jKXIaovApP");'>
+<aside class="w-64 bg-primary flex flex-col h-full shrink-0 transition-all duration-300 ease-in-out relative z-30 shadow-xl hidden md:flex">
+<div class="p-6 pb-2 flex items-center gap-3">
+<!-- Logo -->
+<div class="shrink-0">
+<img src="../../NA/NA_logo_branco.png" alt="Nova Acrópole" class="h-10 w-auto">
 </div>
-<div class="flex flex-col">
-<h1 class="text-slate-900 dark:text-white text-base font-bold leading-none tracking-tight">Nova Acrópole</h1>
-<p class="text-slate-500 dark:text-slate-400 text-xs font-normal mt-1">Admin Panel</p>
+<div>
+<h1 class="text-white font-bold text-lg leading-tight tracking-tight">Nova Acrópole</h1>
+<p class="text-white/60 text-xs font-medium">Admin System</p>
 </div>
 </div>
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
-<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">dashboard</span>
+<div class="px-4 py-6 flex flex-col gap-1 flex-1 overflow-y-auto">
+<p class="px-4 text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">Main Menu</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../admin_intelligent_schedule_dashboard/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">dashboard</span>
 <span class="text-sm font-medium">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
-<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">groups</span>
-<span class="text-sm font-medium">Turmas</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../grade_acadêmica_screen/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-sm font-medium">Grade</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
-<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">school</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/20 text-white shadow-sm ring-1 ring-white/10 transition-colors" href="../professores_directory/index.html">
+<span class="material-symbols-outlined text-[20px] fill-current">school</span>
+<span class="text-sm font-bold">Professores</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../alunos_management/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">face</span>
 <span class="text-sm font-medium">Alunos</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-green-400 transition-colors" href="#">
-<span class="material-symbols-outlined icon-filled">person</span>
-<span class="text-sm font-medium">Professores</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../mensageria_internal_chat/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">chat_bubble</span>
+<span class="text-sm font-medium">Mensageria</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors group" href="#">
-<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300">payments</span>
-<span class="text-sm font-medium">Financeiro</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../mobile_student_agenda_view/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">smartphone</span>
+<span class="text-sm font-medium">Agenda (Aluno)</span>
 </a>
-</nav>
 </div>
-<div class="mt-auto p-6 border-t border-border-light dark:border-border-dark">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors" href="#">
-<span class="material-symbols-outlined text-slate-400">settings</span>
-<span class="text-sm font-medium">Configurações</span>
-</a>
+<!-- User Profile Snippet at Bottom -->
+<div class="p-4 border-t border-white/10 mt-auto bg-primary">
+<button class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-white/5 transition-colors text-left group">
+<div class="size-9 rounded-full bg-cover bg-center border border-white/20 shadow-md" data-alt="User avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN6C2BcndNrmt-C-Qbbmd4UABCt4Qxl-Hya0fW0l0ybxgEVmqoJuwR9uCl9lTHL3qrvtYTTH0pf_DZXWhkkDEgKdV7Hag6RoBYD1Zushilq2HZTn6B7laNl5OULC8-n_yCpwz0X5bNqitYCVD7L4H0-bLCn-NGvdIrck2RbIOYblT0IAaCzXA7Hnez8Wr6X1T32b1JWuGoxZq-AyKD0UF61Trt9HJ2S947Yqj-qXR6oiXfb7YKRQuL1GEV5SXmG9sJxD0wBdmtibmA');"></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-medium text-white truncate group-hover:text-white/90">Admin User</span>
+<span class="text-xs text-white/60 truncate group-hover:text-white/80">admin@acropole.org</span>
+</div>
+<span class="material-symbols-outlined text-white/60 ml-auto text-lg group-hover:text-white">expand_more</span>
+</button>
 </div>
 </aside>
 <!-- Main Content -->

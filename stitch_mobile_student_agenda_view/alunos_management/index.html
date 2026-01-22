@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
-<html class="light" lang="pt-BR"><head>
+<html class="light" lang="pt-BR">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Gerenciamento de Alunos - Nova Acrópole</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -16,16 +15,14 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#0fbd49",
-                        "background-light": "#f6f8f6",
-                        "background-dark": "#102216",
-                        "text-main": "#0d1b12",
-                        "text-secondary": "#4c9a66",
+                        "primary": "#086357",
+                        "background-light": "#f8fcfb",
+                        "background-dark": "#10221f",
                         "surface-light": "#ffffff",
-                        "surface-dark": "#1a2e22",
+                        "surface-dark": "#162e2a",
                     },
                     fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
+                        "display": ["Inter", "sans-serif"]
                     },
                     borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
@@ -33,114 +30,146 @@
         }
     </script>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-x-hidden">
-<!-- Top Navbar -->
-<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7f3eb] dark:border-[#1a2e22] px-6 lg:px-10 py-3 bg-surface-light dark:bg-surface-dark shadow-sm">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-text-main dark:text-white">
-<div class="size-6 text-primary">
-<span class="material-symbols-outlined !text-3xl">school</span>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen flex overflow-hidden selection:bg-primary/20">
+
+<!-- Sidebar -->
+<aside class="w-64 bg-primary flex flex-col h-full shrink-0 transition-all duration-300 ease-in-out relative z-30 shadow-xl hidden md:flex">
+<div class="p-6 pb-2 flex items-center gap-3">
+<div class="shrink-0">
+<img src="../../NA/NA_logo_branco.png" alt="Nova Acrópole" class="h-10 w-auto">
 </div>
-<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Nova Acrópole</h2>
+<div>
+<h1 class="text-white font-bold text-lg leading-tight tracking-tight">Nova Acrópole</h1>
+<p class="text-white/60 text-xs font-medium">Sistema Admin</p>
 </div>
-<nav class="hidden lg:flex items-center gap-9">
-<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
-<a class="text-primary text-sm font-bold leading-normal border-b-2 border-primary py-1" href="#">Alunos</a>
-<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Turmas</a>
-<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Financeiro</a>
-<a class="text-text-main dark:text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Configurações</a>
-</nav>
 </div>
-<div class="flex flex-1 justify-end gap-6 items-center">
-<label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-[#e7f3eb] dark:bg-[#25382b] overflow-hidden group focus-within:ring-2 ring-primary/50 transition-all">
-<div class="text-text-secondary flex items-center justify-center pl-4 pr-2">
-<span class="material-symbols-outlined text-[20px]">search</span>
+<div class="px-4 py-6 flex flex-col gap-1 flex-1 overflow-y-auto">
+<p class="px-4 text-xs font-semibold text-white/40 uppercase tracking-wider mb-2">Menu Principal</p>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../admin_intelligent_schedule_dashboard/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../grade_acadêmica_screen/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="text-sm font-medium">Grade</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../professores_directory/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">school</span>
+<span class="text-sm font-medium">Professores</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/20 text-white shadow-sm ring-1 ring-white/10 transition-colors" href="../alunos_management/index.html">
+<span class="material-symbols-outlined text-[20px] fill-current">face</span>
+<span class="text-sm font-bold">Alunos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../mensageria_internal_chat/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">chat_bubble</span>
+<span class="text-sm font-medium">Mensageria</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors group" href="../mobile_student_agenda_view/index.html">
+<span class="material-symbols-outlined text-[20px] group-hover:scale-110 transition-transform">smartphone</span>
+<span class="text-sm font-medium">Agenda (Aluno)</span>
+</a>
 </div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none bg-transparent border-none focus:ring-0 text-text-main dark:text-white h-full placeholder:text-text-secondary px-0 text-sm font-normal leading-normal" placeholder="Buscar aluno..."/>
+<div class="p-4 border-t border-white/10 mt-auto bg-primary">
+<button class="flex items-center gap-3 w-full p-2 rounded-lg hover:bg-white/5 transition-colors text-left group">
+<div class="size-9 rounded-full bg-cover bg-center border border-white/20 shadow-md" data-alt="User avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDN6C2BcndNrmt-C-Qbbmd4UABCt4Qxl-Hya0fW0l0ybxgEVmqoJuwR9uCl9lTHL3qrvtYTTH0pf_DZXWhkkDEgKdV7Hag6RoBYD1Zushilq2HZTn6B7laNl5OULC8-n_yCpwz0X5bNqitYCVD7L4H0-bLCn-NGvdIrck2RbIOYblT0IAaCzXA7Hnez8Wr6X1T32b1JWuGoxZq-AyKD0UF61Trt9HJ2S947Yqj-qXR6oiXfb7YKRQuL1GEV5SXmG9sJxD0wBdmtibmA');"></div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-medium text-white truncate group-hover:text-white/90">Admin User</span>
+<span class="text-xs text-white/60 truncate group-hover:text-white/80">admin@acropole.org</span>
 </div>
-</label>
-<button class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-md hover:shadow-lg">
-<span class="truncate">+ Novo Aluno</span>
+<span class="material-symbols-outlined text-white/60 ml-auto text-lg group-hover:text-white">expand_more</span>
 </button>
-<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary cursor-pointer" data-alt="User profile picture showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsFMMgiNj_vtae6S6TuUAsIJg3NH1DEskHh0dl_WloUHtDBdR_A8-yxzowiQEB9bfBGZo-VJVIrlCP5A9BxDfRebGe6yFEQVdZDlUo02vUQlUS04CqtH6X7xeS7LecP9Ed6AN107ClMPR28__YPvIo4rQoNuEw6NMqztjiOc5dOfVaVBitYjNOdaTbbmcqffle-mJamVYqIqAbQqaA9TFBrj3zBPDBBb8c0c8XYA-WUBhxjE05IU-CeX9ajQTju6cyAdeA81wlp4Dx");'></div>
+</div>
+</aside>
+
+<!-- Main Content -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Header -->
+<header class="h-16 px-6 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-surface-dark flex items-center justify-between shrink-0 z-20 shadow-sm">
+<h2 class="text-xl font-bold text-slate-800 dark:text-white tracking-tight">Gerenciamento de Alunos</h2>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-black/20 text-sm focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Buscar aluno...">
+</div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white text-sm font-bold rounded-lg shadow-sm transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Novo Aluno</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-primary cursor-pointer" data-alt="User profile" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsFMMgiNj_vtae6S6TuUAsIJg3NH1DEskHh0dl_WloUHtDBdR_A8-yxzowiQEB9bfBGZo-VJVIrlCP5A9BxDfRebGe6yFEQVdZDlUo02vUQlUS04CqtH6X7xeS7LecP9Ed6AN107ClMPR28__YPvIo4rQoNuEw6NMqztjiOc5dOfVaVBitYjNOdaTbbmcqffle-mJamVYqIqAbQqaA9TFBrj3zBPDBBb8c0c8XYA-WUBhxjE05IU-CeX9ajQTju6cyAdeA81wlp4Dx");'></div>
 </div>
 </header>
-<!-- Main Content -->
-<main class="flex-1 flex flex-col items-center py-8 px-6 lg:px-10">
-<div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1 gap-8">
-<!-- Page Heading & Stats -->
+
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-auto p-6 lg:p-10">
+<div class="max-w-[1200px] mx-auto flex flex-col gap-8">
+<!-- Stats -->
 <div class="flex flex-wrap items-end justify-between gap-6">
 <div class="flex flex-col gap-2">
-<h1 class="text-text-main dark:text-white tracking-tight text-[32px] font-bold leading-tight">Gerenciamento de Alunos</h1>
-<p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">Visualize, filtre e gerencie o progresso acadêmico dos alunos.</p>
+<p class="text-slate-500 dark:text-gray-400 text-sm font-normal leading-normal">Visualize, filtre e gerencie o progresso acadêmico dos alunos.</p>
 </div>
 <div class="flex gap-4">
-<div class="px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
-<p class="text-xs text-text-secondary font-medium">Total de Alunos</p>
-<p class="text-xl font-bold text-text-main dark:text-white">1,248</p>
+<div class="px-4 py-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<p class="text-xs text-slate-500 font-medium">Total de Alunos</p>
+<p class="text-xl font-bold text-slate-900 dark:text-white">1,248</p>
 </div>
-<div class="px-4 py-2 rounded-lg bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
-<p class="text-xs text-text-secondary font-medium">Ativos</p>
+<div class="px-4 py-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-sm">
+<p class="text-xs text-slate-500 font-medium">Ativos</p>
 <p class="text-xl font-bold text-primary">1,180</p>
 </div>
 </div>
 </div>
-<!-- Filters & Actions Bar -->
+
+<!-- Filters -->
 <div class="flex flex-wrap items-center justify-between gap-4 p-1">
 <div class="flex gap-3 flex-wrap">
 <!-- Filter: Turma -->
-<div class="relative group">
 <button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-3 hover:border-primary transition-colors shadow-sm">
-<span class="text-text-main dark:text-white text-sm font-medium">Todas as Turmas</span>
-<span class="material-symbols-outlined text-text-secondary text-[20px]">expand_more</span>
+<span class="text-slate-700 dark:text-white text-sm font-medium">Todas as Turmas</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">expand_more</span>
 </button>
-</div>
 <!-- Filter: Status -->
-<div class="relative group">
 <button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-3 hover:border-primary transition-colors shadow-sm">
-<span class="text-text-main dark:text-white text-sm font-medium">Status Financeiro</span>
-<span class="material-symbols-outlined text-text-secondary text-[20px]">expand_more</span>
+<span class="text-slate-700 dark:text-white text-sm font-medium">Status Financeiro</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">expand_more</span>
 </button>
-</div>
 <!-- Filter: Sort -->
-<div class="relative group">
 <button class="flex h-10 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 pl-4 pr-3 hover:border-primary transition-colors shadow-sm">
-<span class="text-text-main dark:text-white text-sm font-medium">Ordenar: Recentes</span>
-<span class="material-symbols-outlined text-text-secondary text-[20px]">sort</span>
+<span class="text-slate-700 dark:text-white text-sm font-medium">Ordenar: Recentes</span>
+<span class="material-symbols-outlined text-slate-400 text-[20px]">sort</span>
 </button>
-</div>
 </div>
 <!-- View Toggle -->
 <div class="flex bg-white dark:bg-surface-dark rounded-lg border border-gray-200 dark:border-gray-700 p-1 shadow-sm">
-<button class="p-1.5 rounded bg-gray-100 dark:bg-gray-700 text-text-main dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<button class="p-1.5 rounded bg-gray-100 dark:bg-gray-700 text-slate-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
 <span class="material-symbols-outlined text-[20px]">grid_view</span>
 </button>
-<button class="p-1.5 rounded text-text-secondary hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+<button class="p-1.5 rounded text-slate-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
 <span class="material-symbols-outlined text-[20px]">view_list</span>
 </button>
 </div>
 </div>
-<!-- Student Grid -->
+
+<!-- Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 <!-- Student Card 1 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Mariana Silva" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhTfbQORogjI9nZfK5A4acyFJaiBdfhrQaASsvNRNqh3nTv-83JTubW5YxMgqQ3pcWlB5BJZJ1A8C7tdxkl8uvW_3k29Uk2BKQhH9N3a_TQ3MioPpDxOUqqAl2kfVEGUxSj2tmzIe57Fq6xFWq4k5kTRihWXPUKcrib-chgFh0Rgt7ppS_zHn1om1eOxI1gLy9exUSvxUP5bwzUOPrJaGUdByXv17o0QoJhDhDtaotV-TA8RuHwYrk0sIwP9m-0H02ZVUpWuhoHOQW");'></div>
-<span class="inline-flex items-center gap-1 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] px-2 py-1 text-xs font-semibold text-primary">
+<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-xs font-semibold text-primary">
 <span class="size-1.5 rounded-full bg-primary"></span>
                                 Em dia
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Mariana Silva</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Mariana Silva</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma A - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">75%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -149,16 +178,16 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 2 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Carlos Mendes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDp-j-fsTMqMQ2OJzn7ZHclf5S0P4g_ZltDUhqv0jozRaRyBwxY6ugM7FaSlwbCei0fJ1bxeBSsZdv5uZdqTou4UL6Zc36xTfWrHW3JaZjPid3eip2o4RzFMFr7_Qm6OikMu4nHu9LxLMpcnyS8gyD2gt7ITGj7x0JuheZf1pgSn6v6qIAleyk3jUf7y-xZNedvfXnGy2kac0ZQXne1yOpRyJEgVk7NPmlwm2xcdxtgwg8erkaE3C50qdnb0JMdeQUhdtY99iRVmM_S");'></div>
@@ -168,13 +197,13 @@
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Carlos Mendes</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Psicologia &amp; Simbologia</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Carlos Mendes</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Psicologia &amp; Simbologia</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma C - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">32%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -183,32 +212,32 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 3 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Ana Costa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAn4H_ENZEQNIj0C4Mn42s-MfTKVXWmxOQqZXZPIaJKPGe5b5TEnGeKFMs4N1HNho_WDl3PhvCl5xCitBhCvYhANCGY5hBky--f-Op1AhJzSoUKmwTTs-r5RymIEZJf4V2ljMQJq1zDYqgdi-JSVX7vYg7VhGkgTXjveOfEZaQuTQjzeG285R2F4RIuXoEbZV9m6D8n9-LACLkt59-Hy0IuPYyifaQLxaKoFmBEgzWO8HUQOIwv7tHJv9-HeEEjjUlRVk_z4weJ3KwW");'></div>
-<span class="inline-flex items-center gap-1 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] px-2 py-1 text-xs font-semibold text-primary">
+<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-xs font-semibold text-primary">
 <span class="size-1.5 rounded-full bg-primary"></span>
                                 Em dia
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Ana Costa</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Ana Costa</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma A - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">90%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -217,16 +246,16 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 4 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Rafael Souza" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcrPImiC-C357osGoH5ms7q_K5tfaL-CtOxJ_oNBLqjabNDie76YWzHKTbU-zUF1uDwL1y-RkwM7Xb0MidY8jk6LB4UoRli1Imlqth2qgRb0FV-P4bNXtQwrLptayfVX-bR4rw6oX0X0_2bdVkm_WBOLoBMcKkgzY3CZXHwRUJWnBBNqqvDEpzbGalmiEPhVaWEMPGEO1j6u4TBC2atnB_kwHx9XcBFLegQZxlRPro76qnt_9kKvuVXHju5VvxQsOwJb1al739ZS1h");'></div>
@@ -236,13 +265,13 @@
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Rafael Souza</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">História das Religiões</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Rafael Souza</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">História das Religiões</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma B - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">15%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -251,32 +280,32 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 5 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Beatriz Oliveira" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCvahFUxlEvFTH2OURQO8VZEQPkIFMiyiQAXpb6Z0XL8WHj5UGUtGw50G17aK4vrCaaJUi1HA9bFBmTi7V3bkXBg8Q6-rdHhRnCN1Z0MZiZEJpUAX746tUBHag-N6jtTWnO0TqVzunCGC3SUxU_aWZ-1vktxq_prYQLEH5i4GdRiOPDz4DcxW1a2l1t6r9EEUs5XVPmeGM4D9z_9-DvNUHRMbfrP-PBV6HPYCOvUGrQT6ZpTnQqiJUkniU5UVuZnm4senktOKtz4W2");'></div>
-<span class="inline-flex items-center gap-1 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] px-2 py-1 text-xs font-semibold text-primary">
+<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-xs font-semibold text-primary">
 <span class="size-1.5 rounded-full bg-primary"></span>
                                 Em dia
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Beatriz Oliveira</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Beatriz Oliveira</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma A - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">55%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -285,16 +314,16 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 6 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Pedro Santos" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyPYgzAHa48OtchIOhq2EEj1iahmmgJbf8vUz8wL_DzjFzvYYillEYW_Yj8_DqP3fY08kAMBeM2WlIKOxhl-KiL-yznMOaS4IFOL1wcT1yGu-ljn-sudhBvg8C1M3BBIxmprE8oBNZafAsk_pm7SZYh2WbO-k3TfoeFh3HvjDWUFgZvX4Plem8w_TlLyoqf8Zc-4wzp21xhBYKzIO5ZQBBL-eHoJ3HOsGz_k6Mom_bGLdRJ0XIb42kck2ihSpDhuZCdB6skSIq5wVU");'></div>
@@ -304,13 +333,13 @@
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Pedro Santos</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Ética e Moral</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Pedro Santos</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Ética e Moral</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma D - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">48%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -319,32 +348,32 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
 </article>
 <!-- Student Card 7 -->
-<article class="group flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
+<article class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-transparent hover:border-primary/20 overflow-hidden">
 <div class="p-5 flex flex-col gap-4">
 <div class="flex items-start justify-between">
 <div class="bg-center bg-no-repeat bg-cover rounded-full size-14 border-2 border-white dark:border-gray-700 shadow-sm" data-alt="Portrait of student Julia Martins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9XXQBAMxGzuQs65LfZ5tl8l2UeTuw6BtbZpKZIlBYzItc2VsEysJkNMRnYns3VapIG8JoE3dT8kdUAceHvEWhjf6UB6XEE4nrg7QHYSyzOMhaPTgiyoCELkBOHp0YDXQbxCok8jeZ6YA6dxij70XGL7ISzZA-eZm4grhT4ymrukcdnWnkZcVrEI57Z_lf0P09tqlP2-8w0j8lY3r8bN6egP0hRufTGya0CRpDS6CMbI7WJnE5r9r92DELFD8Efsf_mfJFgX3eFsXn");'></div>
-<span class="inline-flex items-center gap-1 rounded-full bg-[#e7f3eb] dark:bg-[#1e3a29] px-2 py-1 text-xs font-semibold text-primary">
+<span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-xs font-semibold text-primary">
 <span class="size-1.5 rounded-full bg-primary"></span>
                                 Em dia
                             </span>
 </div>
 <div>
-<h3 class="text-text-main dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Julia Martins</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight group-hover:text-primary transition-colors">Julia Martins</h3>
+<p class="text-slate-500 dark:text-gray-400 text-sm mt-1">Filosofia Aplicada</p>
 <p class="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Turma A - 2023</p>
 </div>
 <div class="mt-2 space-y-2">
 <div class="flex justify-between text-xs font-medium">
-<span class="text-text-main dark:text-white">Progresso</span>
+<span class="text-slate-900 dark:text-white">Progresso</span>
 <span class="text-primary">82%</span>
 </div>
 <div class="h-2 w-full rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden">
@@ -353,10 +382,10 @@
 </div>
 </div>
 <div class="mt-auto border-t border-gray-100 dark:border-gray-800 p-3 flex justify-between items-center bg-gray-50/50 dark:bg-black/10">
-<button class="text-xs font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-1">
+<button class="text-xs font-medium text-slate-500 hover:text-primary transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px]">visibility</span> Ver Detalhes
                         </button>
-<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-text-secondary transition-colors">
+<button class="size-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-slate-500 transition-colors">
 <span class="material-symbols-outlined text-[20px]">more_vert</span>
 </button>
 </div>
@@ -369,20 +398,8 @@
 <span class="mt-4 text-sm font-bold text-gray-500 group-hover:text-primary">Adicionar Novo Aluno</span>
 </button>
 </div>
-<!-- Pagination -->
-<div class="flex items-center justify-center mt-8 gap-2">
-<button class="flex items-center justify-center size-9 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-text-secondary hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50">
-<span class="material-symbols-outlined text-sm">arrow_back_ios_new</span>
-</button>
-<button class="flex items-center justify-center size-9 rounded-lg bg-primary text-white font-bold text-sm shadow-md">1</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-medium">2</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-medium">3</button>
-<span class="text-text-secondary px-2">...</span>
-<button class="flex items-center justify-center size-9 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-text-main dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-medium">12</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-surface-dark text-text-secondary hover:bg-gray-50 dark:hover:bg-gray-800">
-<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
-</button>
 </div>
 </div>
 </main>
-</body></html>
+</body>
+</html>

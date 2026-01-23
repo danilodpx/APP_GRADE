@@ -3,279 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Intelligent Schedule Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <title>Nova Acrópole - Protótipos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#086357",
+                        "primary-hover": "#064e45",
+                        "background-light": "#f6f8f8",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-background-light text-slate-900 font-sans min-h-screen flex flex-col">
 
-    <div class="dashboard-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fas fa-calendar-check"></i>
-                    <span>IntelliSched</span>
+    <header class="bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="NA/NA_logo.png" alt="Nova Acrópole" class="h-10 w-auto">
+                <div>
+                    <h1 class="text-xl font-bold text-primary">Nova Acrópole</h1>
+                    <p class="text-xs text-slate-500">Protótipos do Sistema</p>
                 </div>
             </div>
+        </div>
+    </header>
 
-            <nav class="sidebar-nav">
-                <ul>
-                    <li>
-                        <button onclick="showScreen('home')" class="nav-btn active">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Dashboard</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="showScreen('schedule')" class="nav-btn">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Agenda</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="showScreen('products')" class="nav-btn">
-                            <i class="fas fa-box"></i>
-                            <span>Produtos</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="showScreen('contact')" class="nav-btn">
-                            <i class="fas fa-envelope"></i>
-                            <span>Mensagens</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="showScreen('settings')" class="nav-btn">
-                            <i class="fas fa-cog"></i>
-                            <span>Configurações</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+    <main class="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold mb-2">Novos Layouts e Funcionalidades</h2>
+            <p class="text-slate-600">Selecione abaixo o módulo que deseja visualizar.</p>
+        </div>
 
-            <div class="sidebar-footer">
-                <div class="user-info">
-                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
-                    <div class="user-details">
-                        <span class="user-name">Admin User</span>
-                        <span class="user-role">Super Admin</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Mobile Student Agenda -->
+            <a href="stitch_mobile_student_agenda_view/mobile_student_agenda_view/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">smartphone</span>
                     </div>
+                    <h3 class="font-bold text-lg">Agenda do Aluno (Mobile)</h3>
                 </div>
-            </div>
-        </aside>
+                <p class="text-sm text-slate-500">Visualização mobile da agenda do estudante com eventos e status.</p>
+            </a>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Header -->
-            <header class="top-header">
-                <div class="header-left">
-                    <h2>Visão Geral</h2>
-                </div>
-                <div class="header-right">
-                    <div class="search-bar">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Buscar...">
+            <!-- Admin Intelligent Schedule -->
+            <a href="stitch_mobile_student_agenda_view/admin_intelligent_schedule_dashboard/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">dashboard</span>
                     </div>
-                    <button class="icon-btn"><i class="fas fa-bell"></i></button>
-                    <button class="icon-btn"><i class="fas fa-question-circle"></i></button>
+                    <h3 class="font-bold text-lg">Admin Dashboard</h3>
                 </div>
-            </header>
+                <p class="text-sm text-slate-500">Painel administrativo inteligente para gestão de horários e salas.</p>
+            </a>
 
-            <!-- Content Area -->
-            <div id="app-content">
-
-                <!-- Home / Dashboard Screen -->
-                <div id="home" class="screen">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-icon bg-blue"><i class="fas fa-users"></i></div>
-                            <div class="stat-info">
-                                <h3>Total Usuários</h3>
-                                <p>1,234</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon bg-green"><i class="fas fa-calendar-check"></i></div>
-                            <div class="stat-info">
-                                <h3>Agendamentos</h3>
-                                <p>56</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon bg-purple"><i class="fas fa-dollar-sign"></i></div>
-                            <div class="stat-info">
-                                <h3>Receita</h3>
-                                <p>R$ 12.450</p>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-icon bg-orange"><i class="fas fa-tasks"></i></div>
-                            <div class="stat-info">
-                                <h3>Tarefas</h3>
-                                <p>12 Pendentes</p>
-                            </div>
-                        </div>
+            <!-- Secure Login -->
+            <a href="stitch_mobile_student_agenda_view/secure_multi-factor_login/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">security</span>
                     </div>
-
-                    <div class="content-row">
-                        <div class="card large-card">
-                            <div class="card-header">
-                                <h3>Próximos Agendamentos</h3>
-                                <button class="btn-sm">Ver Todos</button>
-                            </div>
-                            <div class="card-body">
-                                <ul class="schedule-list">
-                                    <li class="schedule-item">
-                                        <div class="time">09:00</div>
-                                        <div class="details">
-                                            <h4>Reunião de Equipe</h4>
-                                            <p>Sala de Conferência A</p>
-                                        </div>
-                                        <span class="status pending">Pendente</span>
-                                    </li>
-                                    <li class="schedule-item">
-                                        <div class="time">10:30</div>
-                                        <div class="details">
-                                            <h4>Cliente: João Silva</h4>
-                                            <p>Consultoria Online</p>
-                                        </div>
-                                        <span class="status confirmed">Confirmado</span>
-                                    </li>
-                                    <li class="schedule-item">
-                                        <div class="time">14:00</div>
-                                        <div class="details">
-                                            <h4>Revisão de Projeto</h4>
-                                            <p>Escritório</p>
-                                        </div>
-                                        <span class="status confirmed">Confirmado</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="card small-card">
-                            <div class="card-header">
-                                <h3>Atividade Recente</h3>
-                            </div>
-                            <div class="card-body">
-                                <ul class="activity-list">
-                                    <li><i class="fas fa-circle text-green"></i> Novo pedido #1234</li>
-                                    <li><i class="fas fa-circle text-blue"></i> Usuário cadastrado</li>
-                                    <li><i class="fas fa-circle text-red"></i> Erro no servidor</li>
-                                    <li><i class="fas fa-circle text-orange"></i> Agendamento cancelado</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="font-bold text-lg">Login Seguro</h3>
                 </div>
+                <p class="text-sm text-slate-500">Tela de login com autenticação multifator (MFA).</p>
+            </a>
 
-                <!-- Schedule Screen (New) -->
-                <div id="schedule" class="screen hidden">
-                    <div class="card full-card">
-                        <div class="card-header">
-                            <h3>Agenda Completa</h3>
-                            <div class="card-actions">
-                                <button class="btn-primary"><i class="fas fa-plus"></i> Novo Evento</button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="calendar-placeholder">
-                                <p style="text-align: center; color: #888; padding: 50px;">
-                                    <i class="fas fa-calendar-alt" style="font-size: 3rem; display: block; margin-bottom: 10px;"></i>
-                                    Componente de Calendário aqui
-                                </p>
-                            </div>
-                        </div>
+            <!-- Grade Acadêmica -->
+            <a href="stitch_mobile_student_agenda_view/grade_acadêmica_screen/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">calendar_month</span>
                     </div>
+                    <h3 class="font-bold text-lg">Grade Acadêmica</h3>
                 </div>
+                <p class="text-sm text-slate-500">Visualização da grade de aulas e cronogramas.</p>
+            </a>
 
-                <!-- Products Screen -->
-                <div id="products" class="screen hidden">
-                    <div class="card full-card">
-                        <div class="card-header">
-                            <h3>Gestão de Produtos</h3>
-                            <button class="btn-primary"><i class="fas fa-plus"></i> Adicionar Produto</button>
-                        </div>
-                        <div class="card-body">
-                             <div class="product-grid">
-                                <div class="product-card">
-                                    <div class="product-icon"><i class="fas fa-mobile-alt"></i></div>
-                                    <h4>Smartphone X</h4>
-                                    <p>R$ 2.500,00</p>
-                                    <span class="stock in-stock">Em Estoque</span>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-icon"><i class="fas fa-laptop"></i></div>
-                                    <h4>Laptop Pro</h4>
-                                    <p>R$ 5.500,00</p>
-                                    <span class="stock low-stock">Baixo Estoque</span>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-icon"><i class="fas fa-headphones"></i></div>
-                                    <h4>Fone Wireless</h4>
-                                    <p>R$ 350,00</p>
-                                    <span class="stock in-stock">Em Estoque</span>
-                                </div>
-                                 <div class="product-card">
-                                    <div class="product-icon"><i class="fas fa-camera"></i></div>
-                                    <h4>Câmera DSLR</h4>
-                                    <p>R$ 3.200,00</p>
-                                    <span class="stock out-stock">Esgotado</span>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Professores Directory -->
+            <a href="stitch_mobile_student_agenda_view/professores_directory/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">school</span>
                     </div>
+                    <h3 class="font-bold text-lg">Diretório de Professores</h3>
                 </div>
+                <p class="text-sm text-slate-500">Lista e gestão de professores da instituição.</p>
+            </a>
 
-                <!-- Contact Screen -->
-                <div id="contact" class="screen hidden">
-                     <div class="card full-card">
-                        <div class="card-header">
-                            <h3>Mensagens</h3>
-                        </div>
-                        <div class="card-body">
-                            <form class="contact-form">
-                                <div class="form-group">
-                                    <label for="name">Nome:</label>
-                                    <input type="text" id="name" name="name" placeholder="Nome do contato">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" placeholder="email@exemplo.com">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="message">Mensagem:</label>
-                                    <textarea id="message" name="message" rows="5" placeholder="Digite sua mensagem..."></textarea>
-                                </div>
-
-                                <button type="button" class="btn-primary">Enviar Mensagem</button>
-                            </form>
-                        </div>
+            <!-- Alunos Management -->
+            <a href="stitch_mobile_student_agenda_view/alunos_management/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">face</span>
                     </div>
+                    <h3 class="font-bold text-lg">Gestão de Alunos</h3>
                 </div>
+                <p class="text-sm text-slate-500">Gerenciamento de cadastros e informações dos alunos.</p>
+            </a>
 
-                 <!-- Settings Screen (Placeholder) -->
-                <div id="settings" class="screen hidden">
-                    <div class="card full-card">
-                        <div class="card-header">
-                            <h3>Configurações</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Painel de configurações do sistema.</p>
-                        </div>
+            <!-- Mensageria -->
+            <a href="stitch_mobile_student_agenda_view/mensageria_internal_chat/index.html" class="block bg-white rounded-xl shadow-sm border border-slate-200 p-6 hover:shadow-md hover:border-primary/50 transition-all group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">chat_bubble</span>
                     </div>
+                    <h3 class="font-bold text-lg">Mensageria</h3>
                 </div>
+                <p class="text-sm text-slate-500">Sistema de chat interno e comunicações.</p>
+            </a>
 
-            </div>
-        </main>
-    </div>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="mt-12 pt-8 border-t border-slate-200">
+            <h3 class="text-lg font-semibold mb-4 text-slate-700">Outros</h3>
+            <a href="old_index.html" class="inline-flex items-center gap-2 text-slate-500 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">history</span>
+                Visualizar layout antigo (Dashboard Genérico)
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-6 mt-auto">
+        <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-400">
+            &copy; 2024 Nova Acrópole. Todos os direitos reservados.
+        </div>
+    </footer>
+
 </body>
 </html>

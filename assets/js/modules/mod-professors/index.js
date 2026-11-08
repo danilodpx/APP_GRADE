@@ -74,7 +74,7 @@
       });
 
       // Atualiza contador no rodapé
-      const countEl = document.querySelector('main .text-slate-500.text-xs');
+      const countEl = document.getElementById('prof-table-count') || document.querySelector('main .text-slate-500.text-xs');
       if (countEl) {
         countEl.innerHTML = `Mostrando <span class="font-medium text-slate-900 dark:text-white">${filtered.length}</span> de <span class="font-medium text-slate-900 dark:text-white">${allProfessors.length}</span> professores cadastrados`;
       }

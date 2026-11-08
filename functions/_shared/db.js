@@ -85,6 +85,119 @@ const M2_SCHEMA = [
    ('blk-daysy-recep-sab', 'prof-daysy', 'samambaia', 6, 540, 600, 'RECEPCAO', 'Acolhimento matinal aos sábados');`
 ];
 
+const M3_SCHEMA = [
+  `CREATE TABLE IF NOT EXISTS sch_rooms (
+      id TEXT PRIMARY KEY,
+      location_id TEXT NOT NULL,
+      name TEXT NOT NULL,
+      capacity INTEGER NOT NULL,
+      floor_label TEXT,
+      display_order INTEGER NOT NULL DEFAULT 0,
+      is_active INTEGER NOT NULL DEFAULT 1
+  );`,
+  `CREATE TABLE IF NOT EXISTS sch_cohorts (
+      id TEXT PRIMARY KEY,
+      location_id TEXT NOT NULL,
+      code TEXT NOT NULL,
+      symbolic_name TEXT,
+      level_number INTEGER NOT NULL DEFAULT 1,
+      principal_professor_id TEXT,
+      principal_professor_name TEXT,
+      monitor_name TEXT,
+      scribe_name TEXT,
+      cached_headcount INTEGER NOT NULL DEFAULT 0,
+      start_date TEXT,
+      estimated_end_date TEXT,
+      is_active INTEGER NOT NULL DEFAULT 1
+  );`,
+  `CREATE TABLE IF NOT EXISTS sch_weeks (
+      id TEXT PRIMARY KEY,
+      location_id TEXT NOT NULL,
+      week_start_date TEXT NOT NULL,
+      week_end_date TEXT NOT NULL,
+      label TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'PUBLISHED' CHECK (status IN ('DRAFT', 'PUBLISHED', 'ARCHIVED'))
+  );`,
+  `CREATE TABLE IF NOT EXISTS sch_sessions (
+      id TEXT PRIMARY KEY,
+      location_id TEXT NOT NULL,
+      week_id TEXT REFERENCES sch_weeks(id) ON DELETE CASCADE,
+      base_session_id TEXT,
+      is_overridden INTEGER NOT NULL DEFAULT 0,
+      day_of_week INTEGER NOT NULL CHECK (day_of_week BETWEEN 1 AND 7),
+      slot_label TEXT NOT NULL,
+      start_minute INTEGER NOT NULL,
+      end_minute INTEGER NOT NULL,
+      room_id TEXT REFERENCES sch_rooms(id),
+      subject_name TEXT NOT NULL,
+      category TEXT NOT NULL DEFAULT 'Filosofia',
+      professor_id TEXT,
+      professor_name TEXT NOT NULL,
+      substitute_professor_id TEXT,
+      substitute_professor_name TEXT,
+      is_bastiao INTEGER NOT NULL DEFAULT 0,
+      event_status TEXT NOT NULL DEFAULT 'CONFIRMADO' CHECK (event_status IN ('CONFIRMADO', 'ALTERADO', 'CANCELADO', 'NAO_ALOCADO')),
+      notes TEXT,
+      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );`,
+  `CREATE TABLE IF NOT EXISTS sch_session_cohorts (
+      session_id TEXT NOT NULL REFERENCES sch_sessions(id) ON DELETE CASCADE,
+      cohort_id TEXT NOT NULL REFERENCES sch_cohorts(id) ON DELETE CASCADE,
+      PRIMARY KEY (session_id, cohort_id)
+  );`,
+  `CREATE TABLE IF NOT EXISTS sch_snapshots (
+      snapshot_key TEXT PRIMARY KEY,
+      location_id TEXT NOT NULL,
+      week_id TEXT,
+      version_hash TEXT NOT NULL,
+      payload_json TEXT NOT NULL,
+      updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );`,
+  `CREATE INDEX IF NOT EXISTS idx_sch_sessions_prof_day ON sch_sessions(professor_id, day_of_week, start_minute, end_minute);`,
+  `CREATE INDEX IF NOT EXISTS idx_sch_sessions_sub_day ON sch_sessions(substitute_professor_id, day_of_week, start_minute, end_minute);`,
+  `CREATE INDEX IF NOT EXISTS idx_sch_sessions_loc_week ON sch_sessions(location_id, week_id, day_of_week, room_id);`,
+  `INSERT OR IGNORE INTO sch_rooms (id, location_id, name, capacity, floor_label, display_order, is_active) VALUES
+   ('ac-guinevere', 'aguas-claras', 'Guinevere', 44, '1º Andar', 1, 1),
+   ('ac-percival', 'aguas-claras', 'Percival', 22, '1º Andar', 2, 1),
+   ('ac-gawain', 'aguas-claras', 'Gawain', 22, '1º Andar', 3, 1),
+   ('ac-galahad', 'aguas-claras', 'Galahad', 19, '2º Andar', 4, 1),
+   ('ac-merlin', 'aguas-claras', 'Merlin', 14, '2º Andar', 5, 1),
+   ('ac-lancelot', 'aguas-claras', 'Lancelot', 13, '2º Andar', 6, 1),
+   ('ac-salao-camelot', 'aguas-claras', 'Salão Camelot', 80, 'Térreo', 7, 1),
+   ('ac-biblioteca', 'aguas-claras', 'Biblioteca', 15, 'Térreo', 8, 1),
+   ('sam-sala-1', 'samambaia', 'Sala Platão', 35, 'Térreo', 1, 1),
+   ('sam-sala-2', 'samambaia', 'Sala Sócrates', 25, 'Térreo', 2, 1);`,
+  `INSERT OR IGNORE INTO sch_cohorts (id, location_id, code, symbolic_name, level_number, principal_professor_id, principal_professor_name, cached_headcount, is_active) VALUES
+   ('ac-T21A', 'aguas-claras', 'T21A', 'Sabedoria', 1, 'prof-gustavo', 'Gustavo', 28, 1),
+   ('ac-T21B', 'aguas-claras', 'T21B', 'Harmonia', 1, 'prof-debora', 'Débora', 18, 1),
+   ('ac-T32A', 'aguas-claras', 'T32A', 'Justiça', 2, 'prof-luisa', 'Luísa', 16, 1),
+   ('ac-T41A', 'aguas-claras', 'T41A', 'Coragem', 3, 'prof-daysy', 'Daysy', 14, 1),
+   ('ac-T52B', 'aguas-claras', 'T52B', 'Verdade', 4, 'prof-maria-clara', 'Maria Clara', 12, 1),
+   ('sam-T10A', 'samambaia', 'T10A', 'Paz', 1, 'prof-daysy', 'Daysy', 20, 1);`,
+  `INSERT OR IGNORE INTO sch_weeks (id, location_id, week_start_date, week_end_date, label, status) VALUES
+   ('ac-2025-W39', 'aguas-claras', '2025-09-22', '2025-09-27', '22/09 a 27/09/2025', 'PUBLISHED'),
+   ('sam-2025-W39', 'samambaia', '2025-09-22', '2025-09-27', '22/09 a 27/09/2025', 'PUBLISHED');`,
+  `INSERT OR IGNORE INTO sch_sessions (id, location_id, week_id, day_of_week, slot_label, start_minute, end_minute, room_id, subject_name, category, professor_id, professor_name, is_bastiao, event_status) VALUES
+   ('ses-mat-seg-1', 'aguas-claras', NULL, 1, '1º Horário', 1200, 1260, 'ac-guinevere', 'Ética e Moralidade', 'Filosofia', 'prof-gustavo', 'Gustavo', 0, 'CONFIRMADO'),
+   ('ses-mat-seg-2', 'aguas-claras', NULL, 1, '2º Horário', 1270, 1330, 'ac-guinevere', 'Bhagavad Gita', 'Filosofia', 'prof-gustavo', 'Gustavo', 0, 'CONFIRMADO'),
+   ('ses-mat-seg-3', 'aguas-claras', NULL, 1, '1º Horário', 1200, 1260, 'ac-percival', 'Simbologia do Antigo Egito', 'Filosofia', 'prof-debora', 'Débora', 0, 'CONFIRMADO'),
+   ('ses-mat-ter-1', 'aguas-claras', NULL, 2, '1º Horário', 1200, 1260, 'ac-gawain', 'A Voz do Silêncio', 'Filosofia', 'prof-luisa', 'Luísa', 0, 'CONFIRMADO'),
+   ('ses-mat-qua-1', 'aguas-claras', NULL, 3, '1º Horário', 1200, 1260, 'ac-galahad', 'Mito da Caverna de Platão', 'Filosofia', 'prof-daysy', 'Daysy', 0, 'CONFIRMADO'),
+   ('ses-mat-qui-1', 'aguas-claras', NULL, 4, '1º Horário', 1200, 1260, 'ac-merlin', 'Aristóteles e a Metafísica', 'Filosofia', 'prof-gama', 'Gama', 0, 'CONFIRMADO'),
+   ('ses-mat-sab-1', 'aguas-claras', NULL, 6, 'Matutino', 540, 660, 'ac-salao-camelot', 'Seminário Especial de Filosofia', 'Filosofia', 'prof-gustavo', 'Gustavo', 0, 'CONFIRMADO'),
+   ('ses-mat-unsched-1', 'aguas-claras', NULL, 2, '2º Horário', 1270, 1330, NULL, 'Estudo de Textos Clássicos', 'Filosofia', 'prof-eduardo', 'Eduardo', 0, 'NAO_ALOCADO');`,
+  `INSERT OR IGNORE INTO sch_session_cohorts (session_id, cohort_id) VALUES
+   ('ses-mat-seg-1', 'ac-T21A'),
+   ('ses-mat-seg-2', 'ac-T21A'),
+   ('ses-mat-seg-3', 'ac-T21B'),
+   ('ses-mat-ter-1', 'ac-T32A'),
+   ('ses-mat-qua-1', 'ac-T41A'),
+   ('ses-mat-qui-1', 'ac-T52B'),
+   ('ses-mat-sab-1', 'ac-T21A'),
+   ('ses-mat-sab-1', 'ac-T21B'),
+   ('ses-mat-unsched-1', 'ac-T21B');`
+];
+
 /**
  * Garante que o esquema do módulo especificado esteja presente no banco D1 sem apagar dados existentes.
  * Executado 1x por isolate em memória.
@@ -99,12 +212,22 @@ export async function ensureModuleSchema(db, moduleId = 'M1') {
       const statements = M1_SCHEMA.map(sql => db.prepare(sql));
       await db.batch(statements);
     } else if (moduleId === 'M2') {
-      // Garante M1 primeiro se não tiver sido aplicado
       if (!schemaApplied.has('M1')) {
         await db.batch(M1_SCHEMA.map(sql => db.prepare(sql)));
         schemaApplied.add('M1');
       }
       const statements = M2_SCHEMA.map(sql => db.prepare(sql));
+      await db.batch(statements);
+    } else if (moduleId === 'M3') {
+      if (!schemaApplied.has('M1')) {
+        await db.batch(M1_SCHEMA.map(sql => db.prepare(sql)));
+        schemaApplied.add('M1');
+      }
+      if (!schemaApplied.has('M2')) {
+        await db.batch(M2_SCHEMA.map(sql => db.prepare(sql)));
+        schemaApplied.add('M2');
+      }
+      const statements = M3_SCHEMA.map(sql => db.prepare(sql));
       await db.batch(statements);
     }
     schemaApplied.add(key);

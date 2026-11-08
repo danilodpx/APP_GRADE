@@ -47,6 +47,36 @@
     ],
     absences: [
       { id: 'abs-demo-1', professor_id: 'prof-eduardo', start_date: '2025-09-22', end_date: '2025-09-24', reason: 'Congresso de Filosofia', default_substitute_id: 'prof-gustavo', professor_name: 'Eduardo', substitute_name: 'Gustavo' }
+    ],
+    rooms: [
+      { id: 'ac-guinevere', location_id: 'aguas-claras', name: 'Guinevere', capacity: 44, floor_label: '1º Andar', display_order: 1, is_active: 1 },
+      { id: 'ac-percival', location_id: 'aguas-claras', name: 'Percival', capacity: 22, floor_label: '1º Andar', display_order: 2, is_active: 1 },
+      { id: 'ac-gawain', location_id: 'aguas-claras', name: 'Gawain', capacity: 22, floor_label: '1º Andar', display_order: 3, is_active: 1 },
+      { id: 'ac-galahad', location_id: 'aguas-claras', name: 'Galahad', capacity: 19, floor_label: '2º Andar', display_order: 4, is_active: 1 },
+      { id: 'ac-merlin', location_id: 'aguas-claras', name: 'Merlin', capacity: 14, floor_label: '2º Andar', display_order: 5, is_active: 1 },
+      { id: 'ac-lancelot', location_id: 'aguas-claras', name: 'Lancelot', capacity: 13, floor_label: '2º Andar', display_order: 6, is_active: 1 },
+      { id: 'ac-salao-camelot', location_id: 'aguas-claras', name: 'Salão Camelot', capacity: 80, floor_label: 'Térreo', display_order: 7, is_active: 1 },
+      { id: 'ac-biblioteca', location_id: 'aguas-claras', name: 'Biblioteca', capacity: 15, floor_label: 'Térreo', display_order: 8, is_active: 1 },
+      { id: 'sam-sala-1', location_id: 'samambaia', name: 'Sala Platão', capacity: 35, floor_label: 'Térreo', display_order: 1, is_active: 1 },
+      { id: 'sam-sala-2', location_id: 'samambaia', name: 'Sala Sócrates', capacity: 25, floor_label: 'Térreo', display_order: 2, is_active: 1 }
+    ],
+    cohorts: [
+      { id: 'ac-T21A', location_id: 'aguas-claras', code: 'T21A', symbolic_name: 'Sabedoria', level_number: 1, principal_professor_id: 'prof-gustavo', principal_professor_name: 'Gustavo', cached_headcount: 28, is_active: 1 },
+      { id: 'ac-T21B', location_id: 'aguas-claras', code: 'T21B', symbolic_name: 'Harmonia', level_number: 1, principal_professor_id: 'prof-debora', principal_professor_name: 'Débora', cached_headcount: 18, is_active: 1 },
+      { id: 'ac-T32A', location_id: 'aguas-claras', code: 'T32A', symbolic_name: 'Justiça', level_number: 2, principal_professor_id: 'prof-luisa', principal_professor_name: 'Luísa', cached_headcount: 16, is_active: 1 },
+      { id: 'ac-T41A', location_id: 'aguas-claras', code: 'T41A', symbolic_name: 'Coragem', level_number: 3, principal_professor_id: 'prof-daysy', principal_professor_name: 'Daysy', cached_headcount: 14, is_active: 1 },
+      { id: 'ac-T52B', location_id: 'aguas-claras', code: 'T52B', symbolic_name: 'Verdade', level_number: 4, principal_professor_id: 'prof-maria-clara', principal_professor_name: 'Maria Clara', cached_headcount: 12, is_active: 1 }
+    ],
+    weeks: [
+      { id: 'ac-2025-W39', location_id: 'aguas-claras', week_start_date: '2025-09-22', week_end_date: '2025-09-27', label: '22/09 a 27/09/2025', status: 'PUBLISHED' }
+    ],
+    sessions: [
+      { id: 'ses-mat-seg-1', location_id: 'aguas-claras', week_id: null, day_of_week: 1, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-guinevere', subject_name: 'Ética e Moralidade', professor_id: 'prof-gustavo', professor_name: 'Gustavo', cohort_ids: ['ac-T21A'], cohort_codes: ['T21A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
+      { id: 'ses-mat-seg-2', location_id: 'aguas-claras', week_id: null, day_of_week: 1, slot_label: '2º Horário', start_minute: 1270, end_minute: 1330, room_id: 'ac-guinevere', subject_name: 'Bhagavad Gita', professor_id: 'prof-gustavo', professor_name: 'Gustavo', cohort_ids: ['ac-T21A'], cohort_codes: ['T21A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
+      { id: 'ses-mat-seg-3', location_id: 'aguas-claras', week_id: null, day_of_week: 1, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-percival', subject_name: 'Simbologia do Antigo Egito', professor_id: 'prof-debora', professor_name: 'Débora', cohort_ids: ['ac-T21B'], cohort_codes: ['T21B'], is_bastiao: 0, event_status: 'CONFIRMADO' },
+      { id: 'ses-mat-ter-1', location_id: 'aguas-claras', week_id: null, day_of_week: 2, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-gawain', subject_name: 'A Voz do Silêncio', professor_id: 'prof-luisa', professor_name: 'Luísa', cohort_ids: ['ac-T32A'], cohort_codes: ['T32A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
+      { id: 'ses-mat-qua-1', location_id: 'aguas-claras', week_id: null, day_of_week: 3, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-galahad', subject_name: 'Mito da Caverna de Platão', professor_id: 'prof-daysy', professor_name: 'Daysy', cohort_ids: ['ac-T41A'], cohort_codes: ['T41A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
+      { id: 'ses-mat-unsched-1', location_id: 'aguas-claras', week_id: null, day_of_week: 2, slot_label: '2º Horário', start_minute: 1270, end_minute: 1330, room_id: null, subject_name: 'Estudo de Textos Clássicos', professor_id: 'prof-eduardo', professor_name: 'Eduardo', cohort_ids: ['ac-T21B'], cohort_codes: ['T21B'], is_bastiao: 0, event_status: 'NAO_ALOCADO' }
     ]
   };
 
@@ -206,6 +236,135 @@
           if (idx !== -1) mockDb.blocks.splice(idx, 1);
           return { success: true, deleted_id: id };
         }
+      }
+    }
+
+    if (pathname.includes('/api/schedule/snapshot')) {
+      const locId = url.searchParams.get('location_id') || 'aguas-claras';
+      const wkId = url.searchParams.get('week_id') || null;
+      const rooms = mockDb.rooms.filter(r => r.location_id === locId);
+      const cohorts = mockDb.cohorts.filter(c => c.location_id === locId);
+      const weeks = mockDb.weeks.filter(w => w.location_id === locId);
+      const sessions = mockDb.sessions.filter(s => s.location_id === locId && s.week_id === wkId);
+
+      return {
+        version_hash: 'mock-snap-' + Date.now(),
+        generated_at: new Date().toISOString(),
+        location: { id: locId, name: locId === 'aguas-claras' ? 'Águas Claras' : 'Samambaia' },
+        week: weeks.find(w => w.id === wkId) || null,
+        weeks,
+        rooms,
+        cohorts,
+        sessions,
+        cohort_notices: []
+      };
+    }
+
+    if (pathname.includes('/api/schedule/sessions')) {
+      const locId = url.searchParams.get('location_id') || 'aguas-claras';
+      const wkId = url.searchParams.get('week_id') || null;
+
+      if (method === 'GET') {
+        const activeSessions = mockDb.sessions.filter(s => s.location_id === locId && s.week_id === wkId);
+        const otherSessions = mockDb.sessions.filter(s => s.location_id !== locId && s.room_id != null);
+        return {
+          sessions: activeSessions,
+          otherLocationsSessions: otherSessions,
+          professorBlocks: mockDb.blocks,
+          professorAbsences: mockDb.absences
+        };
+      }
+      if (method === 'POST') {
+        const action = body.action || 'UPSERT';
+        if (action === 'SWAP') {
+          const s1 = mockDb.sessions.find(s => s.id === body.source_session_id);
+          const s2 = mockDb.sessions.find(s => s.id === body.target_session_id);
+          if (s1 && s2) {
+            const tempRoom = s1.room_id;
+            const tempStart = s1.start_minute;
+            const tempEnd = s1.end_minute;
+            const tempDay = s1.day_of_week;
+            const tempSlot = s1.slot_label;
+
+            s1.room_id = s2.room_id;
+            s1.start_minute = s2.start_minute;
+            s1.end_minute = s2.end_minute;
+            s1.day_of_week = s2.day_of_week;
+            s1.slot_label = s2.slot_label;
+
+            s2.room_id = tempRoom;
+            s2.start_minute = tempStart;
+            s2.end_minute = tempEnd;
+            s2.day_of_week = tempDay;
+            s2.slot_label = tempSlot;
+
+            return { success: true, action: 'SWAP' };
+          }
+        }
+        if (action === 'MERGE_BASTIAO') {
+          const s1 = mockDb.sessions.find(s => s.id === body.source_session_id);
+          const s2 = mockDb.sessions.find(s => s.id === body.target_session_id);
+          if (s1 && s2) {
+            s2.is_bastiao = 1;
+            s2.cohort_ids = Array.from(new Set([...(s2.cohort_ids || []), ...(s1.cohort_ids || [])]));
+            s2.cohort_codes = Array.from(new Set([...(s2.cohort_codes || []), ...(s1.cohort_codes || [])]));
+            const idx = mockDb.sessions.findIndex(s => s.id === body.source_session_id);
+            if (idx !== -1) mockDb.sessions.splice(idx, 1);
+            return { success: true, action: 'MERGE_BASTIAO' };
+          }
+        }
+        if (action === 'SPLIT_BASTIAO') {
+          const s = mockDb.sessions.find(x => x.id === body.session_id);
+          if (s && (s.cohort_ids || []).length > 1) {
+            s.is_bastiao = 0;
+            const extraCohorts = s.cohort_ids.slice(1);
+            s.cohort_ids = [s.cohort_ids[0]];
+            s.cohort_codes = [s.cohort_codes[0]];
+
+            extraCohorts.forEach(cId => {
+              const cohortObj = mockDb.cohorts.find(c => c.id === cId);
+              mockDb.sessions.push({
+                ...s,
+                id: `ses-split-${Date.now()}-${Math.random().toString(36).substr(2, 3)}`,
+                room_id: null,
+                event_status: 'NAO_ALOCADO',
+                cohort_ids: [cId],
+                cohort_codes: [cohortObj ? cohortObj.code : cId],
+                is_bastiao: 0
+              });
+            });
+            return { success: true, action: 'SPLIT_BASTIAO' };
+          }
+        }
+
+        // UPSERT
+        const idx = mockDb.sessions.findIndex(s => s.id === body.id);
+        if (idx !== -1) {
+          mockDb.sessions[idx] = { ...mockDb.sessions[idx], ...body };
+          return { success: true, session_id: body.id };
+        } else {
+          const newId = body.id || `ses-${Date.now()}`;
+          const newSession = { ...body, id: newId };
+          mockDb.sessions.push(newSession);
+          return { success: true, session_id: newId };
+        }
+      }
+      if (method === 'DELETE') {
+        const id = url.searchParams.get('id');
+        const idx = mockDb.sessions.findIndex(s => s.id === id);
+        if (idx !== -1) mockDb.sessions.splice(idx, 1);
+        return { success: true, deleted_id: id };
+      }
+    }
+
+    if (pathname.includes('/api/schedule/rooms-cohorts')) {
+      const locId = url.searchParams.get('location_id') || 'aguas-claras';
+      if (method === 'GET') {
+        return {
+          rooms: mockDb.rooms.filter(r => r.location_id === locId),
+          cohorts: mockDb.cohorts.filter(c => c.location_id === locId),
+          weeks: mockDb.weeks.filter(w => w.location_id === locId)
+        };
       }
     }
 

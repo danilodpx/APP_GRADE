@@ -317,3 +317,4 @@
     ChronologicalView.init();
   });
 })(window);
+

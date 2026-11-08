@@ -583,3 +583,4 @@
     KanbanView.init();
   });
 })(window);
+

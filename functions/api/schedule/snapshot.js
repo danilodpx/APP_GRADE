@@ -126,3 +126,4 @@ export async function onRequestGet(context) {
     return jsonResponse({ error: 'Erro ao gerar snapshot: ' + err.message }, 500);
   }
 }
+

@@ -179,3 +179,4 @@ export async function onRequestDelete(context) {
     return jsonResponse({ error: 'Erro ao excluir: ' + err.message }, 500);
   }
 }
+

@@ -196,3 +196,4 @@
   exports.validateSessionCandidate = validateSessionCandidate;
   exports.minuteToTime = minuteToTime;
 })(typeof module !== 'undefined' && module.exports ? module.exports : (window.ScheduleValidator = {}));
+

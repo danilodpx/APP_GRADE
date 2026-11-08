@@ -131,3 +131,4 @@ INSERT OR IGNORE INTO sch_session_cohorts (session_id, cohort_id) VALUES
 ('ses-mat-sab-1', 'ac-T21A'),
 ('ses-mat-sab-1', 'ac-T21B'),
 ('ses-mat-unsched-1', 'ac-T21B');
+

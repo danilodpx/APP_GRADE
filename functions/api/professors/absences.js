@@ -165,3 +165,4 @@ export async function onRequestDelete(context) {
     return jsonResponse({ error: 'Erro ao excluir ausência' }, 500);
   }
 }
+

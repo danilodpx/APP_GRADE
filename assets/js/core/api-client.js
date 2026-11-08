@@ -77,6 +77,23 @@
       { id: 'ses-mat-ter-1', location_id: 'aguas-claras', week_id: null, day_of_week: 2, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-gawain', subject_name: 'A Voz do Silêncio', professor_id: 'prof-luisa', professor_name: 'Luísa', cohort_ids: ['ac-T32A'], cohort_codes: ['T32A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
       { id: 'ses-mat-qua-1', location_id: 'aguas-claras', week_id: null, day_of_week: 3, slot_label: '1º Horário', start_minute: 1200, end_minute: 1260, room_id: 'ac-galahad', subject_name: 'Mito da Caverna de Platão', professor_id: 'prof-daysy', professor_name: 'Daysy', cohort_ids: ['ac-T41A'], cohort_codes: ['T41A'], is_bastiao: 0, event_status: 'CONFIRMADO' },
       { id: 'ses-mat-unsched-1', location_id: 'aguas-claras', week_id: null, day_of_week: 2, slot_label: '2º Horário', start_minute: 1270, end_minute: 1330, room_id: null, subject_name: 'Estudo de Textos Clássicos', professor_id: 'prof-eduardo', professor_name: 'Eduardo', cohort_ids: ['ac-T21B'], cohort_codes: ['T21B'], is_bastiao: 0, event_status: 'NAO_ALOCADO' }
+    ],
+    students: [
+      { id: 'stu-demo-t21a', full_name: 'Aluno T21A Demo', email: 'aluno.t21a@acropole.org.br', phone: '(61) 98000-0001', location_id: 'aguas-claras', cohort_code: 'T21A', course_track: 'Filosofia Aplicada', role_in_cohort: 'ALUNO', progress_pct: 65, financial_status: 'EM_DIA', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-mariana-silva', full_name: 'Mariana Silva', email: 'mariana.silva@acropole.org.br', phone: '(61) 98000-0002', location_id: 'aguas-claras', cohort_code: 'T21A', course_track: 'Filosofia Aplicada', role_in_cohort: 'ESCRIBA', progress_pct: 75, financial_status: 'EM_DIA', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-carlos-mendes', full_name: 'Carlos Mendes', email: 'carlos.mendes@acropole.org.br', phone: '(61) 98000-0003', location_id: 'aguas-claras', cohort_code: 'T21B', course_track: 'Psicologia & Simbologia', role_in_cohort: 'ALUNO', progress_pct: 32, financial_status: 'PENDENTE', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-ana-costa', full_name: 'Ana Costa', email: 'ana.costa@acropole.org.br', phone: '(61) 98000-0004', location_id: 'aguas-claras', cohort_code: 'T21A', course_track: 'Filosofia Aplicada', role_in_cohort: 'MONITOR', progress_pct: 90, financial_status: 'EM_DIA', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-rafael-souza', full_name: 'Rafael Souza', email: 'rafael.souza@acropole.org.br', phone: '(61) 98000-0005', location_id: 'aguas-claras', cohort_code: 'T32A', course_track: 'História das Religiões', role_in_cohort: 'ALUNO', progress_pct: 15, financial_status: 'ATRASADO', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-beatriz-oliveira', full_name: 'Beatriz Oliveira', email: 'beatriz.oliveira@acropole.org.br', phone: '(61) 98000-0006', location_id: 'aguas-claras', cohort_code: 'T21A', course_track: 'Filosofia Aplicada', role_in_cohort: 'ALUNO', progress_pct: 55, financial_status: 'EM_DIA', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-pedro-santos', full_name: 'Pedro Santos', email: 'pedro.santos@acropole.org.br', phone: '(61) 98000-0007', location_id: 'samambaia', cohort_code: 'T10A', course_track: 'Ética e Moral', role_in_cohort: 'ALUNO', progress_pct: 48, financial_status: 'PENDENTE', monthly_fee_cents: 15000, due_day: 10, is_active: 1 },
+      { id: 'stu-julia-martins', full_name: 'Julia Martins', email: 'julia.martins@acropole.org.br', phone: '(61) 98000-0008', location_id: 'aguas-claras', cohort_code: 'T41A', course_track: 'Filosofia Aplicada', role_in_cohort: 'ALUNO', progress_pct: 82, financial_status: 'EM_DIA', monthly_fee_cents: 15000, due_day: 10, is_active: 1 }
+    ],
+    payments: [
+      { id: 'pay-01', student_id: 'stu-demo-t21a', reference_month: '2025-01', amount_cents: 15000, status: 'PAGO', paid_at: '2025-01-09', payment_method: 'PIX', notes: 'PIX App' },
+      { id: 'pay-02', student_id: 'stu-demo-t21a', reference_month: '2025-02', amount_cents: 15000, status: 'PAGO', paid_at: '2025-02-10', payment_method: 'CARTAO', notes: 'Secretaria' },
+      { id: 'pay-03', student_id: 'stu-demo-t21a', reference_month: '2025-03', amount_cents: 15000, status: 'PAGO', paid_at: '2025-03-08', payment_method: 'PIX', notes: 'PIX App' },
+      { id: 'pay-04', student_id: 'stu-carlos-mendes', reference_month: '2025-03', amount_cents: 15000, status: 'PENDENTE', paid_at: null, payment_method: null, notes: 'Aguardando vencimento' },
+      { id: 'pay-05', student_id: 'stu-rafael-souza', reference_month: '2025-02', amount_cents: 15000, status: 'ATRASADO', paid_at: null, payment_method: null, notes: 'Vencido em 10/02' }
     ]
   };
 
@@ -368,6 +385,53 @@
       }
     }
 
+    if (pathname.includes('/api/students/payments')) {
+      if (method === 'GET') {
+        const studentId = url.searchParams.get('student_id');
+        const list = studentId ? mockDb.payments.filter(p => p.student_id === studentId) : mockDb.payments;
+        return { payments: [...list] };
+      }
+      if (method === 'POST') {
+        const newPay = { id: `pay-${Date.now()}`, ...body, status: body.status || 'PAGO', paid_at: body.paid_at || new Date().toISOString().slice(0, 10) };
+        mockDb.payments.unshift(newPay);
+        return { success: true, payment: newPay };
+      }
+    }
+
+    if (pathname.includes('/api/students')) {
+      const locId = url.searchParams.get('location_id') || 'aguas-claras';
+      if (method === 'GET') {
+        let list = mockDb.students.filter(s => s.location_id === locId);
+        const cohort = url.searchParams.get('cohort_code');
+        if (cohort) list = list.filter(s => s.cohort_code === cohort);
+        const status = url.searchParams.get('status');
+        if (status) list = list.filter(s => s.financial_status === status);
+        return {
+          students: list,
+          total_count: list.length,
+          active_count: list.filter(s => s.is_active === 1).length
+        };
+      }
+      if (method === 'POST') {
+        const newStu = { id: `stu-${Date.now()}`, ...body, location_id: body.location_id || locId, is_active: 1 };
+        mockDb.students.unshift(newStu);
+        return { success: true, student: newStu };
+      }
+      if (method === 'PUT') {
+        const idx = mockDb.students.findIndex(s => s.id === body.id);
+        if (idx !== -1) {
+          mockDb.students[idx] = { ...mockDb.students[idx], ...body };
+          return { success: true, updated_id: body.id };
+        }
+      }
+      if (method === 'DELETE') {
+        const id = url.searchParams.get('id');
+        const idx = mockDb.students.findIndex(s => s.id === id);
+        if (idx !== -1) mockDb.students.splice(idx, 1);
+        return { success: true, deleted_id: id };
+      }
+    }
+
     throw new Error(`Rota mock não implementada: ${pathname}`);
   }
 
@@ -400,6 +464,11 @@
 
           const data = await res.json().catch(() => ({}));
           if (!res.ok) {
+            // Servidores locais simples (ex: python -m http.server) retornam 501 para POST/PUT/DELETE ou 404 para rotas /api/*
+            if ([404, 405, 501, 502].includes(res.status)) {
+              console.warn(`[ApiClient] Servidor estático retornou HTTP ${res.status}. Usando fallback local para ${endpoint}`);
+              return await mockFallback(method, endpoint, options.body);
+            }
             throw new Error(data.error || `Erro HTTP ${res.status}`);
           }
           return data;
@@ -408,7 +477,7 @@
         }
       } catch (err) {
         // Se a requisição real falhar por falta de worker, tenta mockFallback
-        if (!isStaticOrFile && (err.message.includes('Failed to fetch') || err.message.includes('404'))) {
+        if (!isStaticOrFile && (err.message.includes('Failed to fetch') || err.message.includes('404') || err.message.includes('501') || err.message.includes('405') || err.message.includes('HTTP'))) {
           console.warn('[ApiClient] Endpoint real indisponível, utilizando fallback em memória:', endpoint);
           return await mockFallback(method, endpoint, options.body);
         }

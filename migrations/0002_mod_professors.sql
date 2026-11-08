@@ -55,3 +55,4 @@ INSERT OR IGNORE INTO prof_personal_blocks (id, professor_id, location_id, day_o
 ('blk-debora-cafe-ter', 'prof-debora', 'aguas-claras', 2, 1170, 1200, 'CAFE', 'Intervalo filosófico e atendimento'),
 ('blk-luisa-estudos-qui', 'prof-luisa', 'aguas-claras', 4, 1110, 1170, 'ESTUDOS_SERIADOS', 'Coordenação de estudos seriados'),
 ('blk-daysy-recep-sab', 'prof-daysy', 'samambaia', 6, 540, 600, 'RECEPCAO', 'Acolhimento matinal aos sábados');
+
